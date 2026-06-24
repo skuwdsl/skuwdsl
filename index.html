@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO 최적화 메타 태그 -->
+    <title>WDSL | 풍수해시스템연구실 (Water & Disaster System Laboratory)</title>
+    <meta name="description" content="기후변화와 풍수해 문제에 대응하기 위해 최첨단 수리수문 분석 및 딥러닝 기반 시스템을 연구하는 WDSL(풍수해시스템연구실)입니다.">
+    <meta name="keywords" content="풍수해, 기후변화, 수리수문, 홍수예측, 머신러닝, 방재시스템, WDSL, 대학원">
+
+    <!-- Open Graph SNS 공유용 메타 태그 -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="WDSL - 풍수해시스템연구실">
+    <meta property="og:description" content="기후변화와 풍수해 예측을 연구하는 Water & Disaster System Laboratory">
+    <meta property="og:image" content="images/logo.png">
+    <meta property="og:url" content="https://wdsl.univ.ac.kr">
+
+    <!-- 웹 폰트 (Google Fonts) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS 스타일시트 -->
+    <link rel="stylesheet" href="style2.css">
+
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+    <!-- 전역 네비게이션 헤더 -->
+    <header id="global-header">
+        <div class="header-container">
+            <a href="#hero" id="brand-logo" class="logo-link">
+                <img src="images/logo1.png" alt="WDSL Logo" class="logo-img">
+                <div class="logo-text">
+                    <span class="logo-title">WDSL</span>
+                    <span class="logo-eng-title">Water & Disaster System Laboratory</span>
+                    <span class="logo-subtitle">서경대학교 풍수해시스템연구실</span>
+                </div>
+            </a>
+
+            <!-- 데스크탑 메뉴 -->
+            <nav id="desktop-nav" class="nav-menu">
+                <a href="#about" class="nav-item" id="nav-link-about">About</a>
+                <div class="nav-item-dropdown">
+                    <a href="#members" class="nav-item" id="nav-link-members">Members</a>
+                    <div class="dropdown-menu">
+                        <a href="#professor-title" class="dropdown-subitem">Professor</a>
+                        <a href="#researchers-title" class="dropdown-subitem">Researchers</a>
+                    </div>
+                </div>
+                <a href="#alumni" class="nav-item" id="nav-link-alumni">Alumni</a>
+                <a href="#publications" class="nav-item" id="nav-link-publications">Publications &amp; Projects</a>
+            </nav>
+
+            <!-- 모바일 토글 버튼 -->
+            <button id="mobile-menu-toggle" aria-label="메뉴 열기">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- 모바일 메뉴 드로어 -->
+    <div id="mobile-drawer" class="drawer">
+        <div class="drawer-header">
+            <button id="mobile-menu-close" aria-label="메뉴 닫기">
+                <i data-lucide="x"></i>
+            </button>
+        </div>
+        <nav id="mobile-nav" class="drawer-nav">
+            <a href="#about" class="mobile-nav-item">About</a>
+            <a href="#members" class="mobile-nav-item">Members</a>
+            <a href="#alumni" class="mobile-nav-item">Alumni</a>
+            <a href="#publications" class="mobile-nav-item">Publications &amp; Projects</a>
+            <a href="#news" class="mobile-nav-item">News</a>
+        </nav>
+    </div>
+    <div id="drawer-overlay" class="overlay"></div>
+
+    <main id="main-content">
+        <!-- 1. 히어로 섹션 -->
+        <section id="hero" class="hero-section">
+            <div class="hero-bg-glow"></div>
+            <div class="hero-content">
+                <span class="hero-university fade-in">Seokyeong University</span>
+                <h1 id="hero-title" class="fade-in">
+                    <span class="gradient-text">Water & Disaster</span><br>
+                    System Laboratory
+                </h1>
+                <p id="hero-tagline" class="fade-in-delayed">
+                    기후 변화와 풍수해 리스크에 대응하는 스마트 수자원 및 자연재해 방재 시스템 연구
+                </p>
+                <div class="hero-actions fade-in-delayed">
+                    <a href="#about" class="btn btn-primary" id="btn-learn-more">연구실 알아보기 <i
+                            data-lucide="arrow-right"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. 연구실 소개 섹션 -->
+        <section id="about" class="section-padding">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">About WDSL</h2>
+                    <p class="section-subtitle">Water & Disaster System Laboratory</p>
+                </div>
+
+                <div class="about-grid">
+                    <!-- 비전 카드 -->
+                    <div class="about-card glass" id="card-vision">
+                        <div class="card-icon"><i data-lucide="compass"></i></div>
+                        <h3>Our Vision</h3>
+                        <p>
+                            WDSL은 기후변화로 인해 갈수록 복잡해지고 극대화되는 수재해 및 풍수해 현상을 과학적으로 규명하고,
+                            빅데이터와 인공지능 기술을 활용하여 안전하고 회복력 있는 도시 및 국가 방재 시스템을 설계하는 것을 목표로 합니다.
+                        </p>
+                    </div>
+
+                    <!-- 핵심 연구 분야 카드 -->
+                    <div class="about-card glass" id="card-research">
+                        <div class="card-icon"><i data-lucide="activity"></i></div>
+                        <h3>Core Research Areas</h3>
+                        <ul class="research-list">
+                            <li><i data-lucide="check" class="list-bullet"></i> AI 기반 홍수 및 침수 실시간 예측</li>
+                            <li><i data-lucide="check" class="list-bullet"></i> 기후변화 시나리오 기반 수자원 취약성 평가</li>
+                            <li><i data-lucide="check" class="list-bullet"></i> 도시 배수 및 저류 시스템 시뮬레이션</li>
+                            <li><i data-lucide="check" class="list-bullet"></i> 위성 데이터 및 원격 탐사 활용 수문 해석</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. 구성원 소개 섹션 -->
+        <section id="members" class="section-padding section-alt">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Members</h2>
+                    <p class="section-subtitle">연구실을 이끌어가는 구성원을 소개합니다</p>
+                </div>
+
+                <!-- 교수 프로필 영역 (JS로 동적 렌더링 예정) -->
+                <h3 class="group-title" id="professor-title">Professor</h3>
+                <div id="professor-container" class="member-group">
+                    <!-- JS 로드 전 대체 메시지 혹은 로딩 바 -->
+                    <div class="loading-spinner"></div>
+                </div>
+
+                <!-- 연구원 프로필 영역 (JS로 동적 렌더링 예정) -->
+                <h3 class="group-title" id="researchers-title">Researchers</h3>
+                <div id="student-container" class="member-grid">
+                    <div class="loading-spinner"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3-2. 졸업생 소개 섹션 -->
+        <section id="alumni" class="section-padding">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Alumni</h2>
+                    <p class="section-subtitle">WDSL의 자랑스러운 졸업생들입니다</p>
+                </div>
+                
+                <!-- 졸업생 목록 영역 (JS로 동적 렌더링 예정) -->
+                <div id="alumni-container" class="alumni-list-container">
+                    <div class="loading-spinner"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. 연구 실적 섹션 -->
+        <section id="publications" class="section-padding">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Publications &amp; Projects</h2>
+                    <p class="section-subtitle">WDSL의 최신 연구 성과 및 주요 연구 과제입니다</p>
+                </div>
+
+                <!-- 필터 탭 -->
+                <div class="pub-filter" id="pub-filter-bar">
+                    <button class="filter-btn active" data-filter="all" id="filter-all">All</button>
+                    <button class="filter-btn" data-filter="journal" id="filter-journal">Journals</button>
+                    <button class="filter-btn" data-filter="conference" id="filter-conference">Conferences</button>
+                    <button class="filter-btn" data-filter="project" id="filter-project">Research Projects</button>
+                </div>
+
+                <!-- 논문 목록 (JS로 동적 렌더링) -->
+                <div id="pub-list-container" class="pub-list">
+                    <div class="loading-spinner"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. 소식 및 공지사항 섹션 -->
+        <section id="news" class="section-padding section-alt">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">News &amp; Notice</h2>
+                    <p class="section-subtitle">연구실의 새로운 소식과 안내사항입니다</p>
+                </div>
+
+                <!-- 뉴스 목록 (JS로 동적 렌더링) -->
+                <div id="news-container" class="news-grid">
+                    <div class="loading-spinner"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="global-footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <div class="footer-brand-logo">
+                    <img src="images/logo1.png" alt="WDSL Logo" class="footer-logo-wdsl">
+                    <div class="footer-brand-text">
+                        <h2>WDSL</h2>
+                        <p>Water &amp; Disaster System Laboratory</p>
+                        <p class="univ-name">서경대학교 풍수해시스템연구실</p>
+                    </div>
+                </div>
+                <img src="images/sku_logo.png" alt="Seokyeong University Logo" class="footer-logo-sku">
+            </div>
+            <div class="footer-info">
+                <p><i data-lucide="map-pin"></i> 주소: 서울특별시 성북구 서경로 124 서경대학교 대일관 B101호</p>
+                <p><i data-lucide="mail"></i> 문의 이메일: skuwdsl@gmail.com</p>
+                <p><i data-lucide="phone"></i> 전화번호: 02-940-7770</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 WDSL. All Rights Reserved. Designed for Water &amp; Disaster Resilience.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 자바스크립트 파일 로드 -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
