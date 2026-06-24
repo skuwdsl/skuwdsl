@@ -33,7 +33,7 @@
       "빅데이터 기반 홍수 예측",
       "머신러닝 수문 모델링"
     ],
-    "image": "images/members/member1.jpg"
+    "image": "images/person.png"
   },
   {
     "id": 3,
@@ -62,7 +62,7 @@
       "도시 배수 시스템 해석",
       "기후 시나리오 분석"
     ],
-    "image": "images/members/member3.jpg"
+    "image": "images/person.png"
   },
   {
     "id": 5,
@@ -76,7 +76,7 @@
       "도시 배수 시스템 해석",
       "기후 시나리오 분석"
     ],
-    "image": "images/members/member4.jpg"
+    "image": "images/park.jpg"
   },
   {
     "id": 6,
