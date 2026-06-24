@@ -1,0 +1,268 @@
+[
+  {
+    "id": 1,
+    "role": "professor",
+    "nameKo": "안재현",
+    "nameEn": "Ahn Jae Hyun ",
+    "positionKo": "지도교수 / 공학박사",
+    "positionEn": "Advisor / Ph.D.",
+    "email": "wrr21@naver.com",
+    "office": "대일관 B101호",
+    "researchInterests": [
+      "풍수해 예측",
+      "기후변화 적응",
+      "수리수문 모델링"
+    ],
+    "careers": [
+      "한국수자원학회 회장",
+      "행정안전부 안전관리위원회 부위원장",
+      "국토교통부 중앙기술심의위원회 위원"
+    ],
+    "image": "images/ahn.png"
+  },
+  {
+    "id": 2,
+    "role": "phd",
+    "nameKo": "백유현",
+    "nameEn": "Beck Yoo Hyun",
+    "positionKo": "박사과정",
+    "positionEn": "Ph.D. Candidate",
+    "company": "동명기술공단 이사",
+    "email": "beckyh@nate.com",
+    "researchInterests": [
+      "빅데이터 기반 홍수 예측",
+      "머신러닝 수문 모델링"
+    ],
+    "image": "images/members/member1.jpg"
+  },
+  {
+    "id": 3,
+    "role": "phd",
+    "nameKo": "염웅선",
+    "nameEn": "Yeom Woong Sun",
+    "positionKo": "박사과정",
+    "positionEn": "Ph.D. Candidate",
+    "email": "duadndtjs@naver.com",
+    "researchInterests": [
+      "빅데이터 기반 홍수 예측",
+      "머신러닝 수문 모델링"
+    ],
+    "image": "images/yeom.jpg"
+  },
+  {
+    "id": 4,
+    "role": "master",
+    "nameKo": "박주용",
+    "nameEn": "Park Joo Yong",
+    "positionKo": "석사과정",
+    "positionEn": "M.S. Student",
+    "company": "유신 수자원1부 과장",
+    "email": "pjynum@naver.com",
+    "researchInterests": [
+      "도시 배수 시스템 해석",
+      "기후 시나리오 분석"
+    ],
+    "image": "images/members/member3.jpg"
+  },
+  {
+    "id": 5,
+    "role": "master",
+    "nameKo": "박유비",
+    "nameEn": "Park You Bi",
+    "positionKo": "석사과정",
+    "positionEn": "M.S. Student",
+    "email": "parkyoube@naver.com",
+    "researchInterests": [
+      "도시 배수 시스템 해석",
+      "기후 시나리오 분석"
+    ],
+    "image": "images/members/member4.jpg"
+  },
+  {
+    "id": 6,
+    "role": "alumni",
+    "nameKo": "유승혁",
+    "nameEn": "Yoo Seung Hyuk",
+    "positionKo": "공학석사 (2010 졸업)",
+    "positionEn": "M.S. (Graduated in 2010)",
+    "company": "동부엔지니어링 수자원환경부 이사"
+  },
+  {
+    "id": 7,
+    "role": "alumni",
+    "nameKo": "김건순",
+    "nameEn": "Kim Keun Soon",
+    "positionKo": "공학석사 (2010 졸업)",
+    "positionEn": "M.S. (Graduated in 2010)",
+    "company": "한국수자원조사기술원 연구원",
+    "email": "jechoi@ndri.go.kr"
+  },
+  {
+    "id": 8,
+    "role": "alumni",
+    "nameKo": "이재근",
+    "nameEn": "Lee Jae Geun",
+    "positionKo": "공학석사 (2011 졸업)",
+    "positionEn": "M.S. (Graduated in 2011)",
+    "company": "㈜주은종합기술 대표""email": "dhyoon@eng.co.kr"
+  },
+  {
+    "id": 9,
+    "role": "alumni",
+    "nameKo": "김경노",
+    "nameEn": "Kim Kyung Noh",
+    "positionKo": "공학석사 (2012 졸업)",
+    "positionEn": "M.S. (Graduated in 2012)",
+    "company": "해주엔지니어링 수자원부 차장",
+    "email": "dhyoon@eng.co.kr"
+  },
+  {
+    "id": 10,
+    "role": "alumni",
+    "nameKo": "전찬웅",
+    "nameEn": "Jeong Chan Wung",
+    "positionKo": "공학석사 (2013 졸업)",
+    "positionEn": "M.S. (Graduated in 2013)",
+    "company": "한국수자원조사기술원 선임연구원",
+    "email": "dhyoon@eng.co.kr"
+  },
+  {
+    "id": 11,
+    "role": "alumni",
+    "nameKo": "박동혁",
+    "nameEn": "Park Dong Hyeok",
+    "positionKo": "공학석사 (2013 졸업)",
+    "positionEn": "M.S. (Graduated in 2013)",
+    "company": "㈜라온티앤씨 대표",
+    "email": "dhyoon@eng.co.kr"
+  },
+  {
+    "id": 12,
+    "role": "alumni",
+    "nameKo": "권진주",
+    "nameEn": "Kwon Jin Joo",
+    "positionKo": "공학석사 (2013 졸업)",
+    "positionEn": "M.S. (Graduated in 2013)",
+    "company": "삼안 수자원부 차장",
+    "email": "dhyoon@eng.co.kr"
+  },
+  {
+    "id": 13,
+    "role": "alumni",
+    "nameKo": "정범",
+    "nameEn": "Jeong Beom",
+    "positionKo": "공학석사 (2014 졸업)",
+    "positionEn": "M.S. (Graduated in 2014)",
+    "company": "한국종합기술 수자원1부 과장",
+    "email": "dhyoon@eng.co.kr"
+  },
+  {
+    "id": 14,
+    "role": "alumni",
+    "nameKo": "신찬섭",
+    "nameEn": "Shin Chan Sub",
+    "positionKo": "공학석사 (2014 졸업)",
+    "positionEn": "M.S. (Graduated in 2014)",
+    "company": "한가람 기술사업부 과장",
+    "email": "dhyoon@eng.co.kr"
+  },
+  {
+    "id": 15,
+    "role": "alumni",
+    "nameKo": "윤여훈",
+    "nameEn": "Yoon Yeo Hun",
+    "positionKo": "공학석사 (2015 졸업)",
+    "positionEn": "M.S. (Graduated in 2015)",
+    "company": "㈜주은종합기술 부장""email": "dhyoon@eng.co.kr"
+  },
+  {
+    "id": 16,
+    "role": "alumni",
+    "nameKo": "정호영",
+    "nameEn": "Jeong Ho Young",
+    "positionKo": "공학석사 (2015 졸업)",
+    "positionEn": "M.S. (Graduated in 2015)",
+    "company": "케이지엔지니어링 수자원방재2부 차장",
+    "email": "dhyoon@eng.co.kr"
+  },
+  {
+    "id": 17,
+    "role": "alumni",
+    "nameKo": "박미리",
+    "nameEn": "Park Mi Ri",
+    "positionKo": "공학석사 (2015 졸업)",
+    "positionEn": "M.S. (Graduated in 2015)",
+    "company": "고양시청 생태하천과",
+    "email": "dhyoon@eng.co.kr"
+  },
+  {
+    "id": 18,
+    "role": "alumni",
+    "nameKo": "김건우",
+    "nameEn": "Kim Geon Woo",
+    "positionKo": "공학석사 (2018 졸업)",
+    "positionEn": "M.S. (Graduated in 2018)",
+    "company": "한국수자원조사기술원 연구원",
+    "email": "dhyoon@eng.co.kr"
+  },
+  {
+    "id": 19,
+    "role": "alumni",
+    "nameKo": "정진홍",
+    "nameEn": "Jung Jin Hong",
+    "positionKo": "공학석사 (2021 졸업)",
+    "positionEn": "M.S. (Graduated in 2021)",
+    "company": "㈜도화엔지니어링 / 과장",
+    "email": "dhyoon@eng.co.kr"
+  },
+  {
+    "id": 20,
+    "role": "alumni",
+    "nameKo": "염웅선",
+    "nameEn": "Yeom Woong Sun",
+    "positionKo": "공학석사 (2021 졸업)",
+    "positionEn": "M.S. (Graduated in 2021)",
+    "company": "서경대학교 박사과정",
+    "email": "dhyoon@eng.co.kr"
+  },
+  {
+    "id": 21,
+    "role": "alumni",
+    "nameKo": "임상우",
+    "nameEn": "Yim Sang Woo",
+    "positionKo": "공학석사 (2023 졸업)",
+    "positionEn": "M.S. (Graduated in 2023)",
+    "company": "㈜동일기술공사 대리",
+    "email": "dhyoon@eng.co.kr"
+  },
+  {
+    "id": 22,
+    "role": "alumni",
+    "nameKo": "문남기",
+    "nameEn": "Moon Nam Ki",
+    "positionKo": "공학석사 (2024 졸업)",
+    "positionEn": "M.S. (Graduated in 2024)",
+    "company": "이산 수자원1부 사원",
+    "email": "dhyoon@eng.co.kr"
+  },
+  {
+    "id": 23,
+    "role": "alumni",
+    "nameKo": "김형규",
+    "nameEn": "Kim Hyung Gyu",
+    "positionKo": "공학석사 (2025 졸업)",
+    "positionEn": "M.S. (Graduated in 2025)",
+    "company": "삼안 수자원부 사원",
+    "email": "dhyoon@eng.co.kr"
+  },
+  {
+    "id": 24,
+    "role": "alumni",
+    "nameKo": "손지훈",
+    "nameEn": "Son Ji Hun",
+    "positionKo": "공학석사 (2026 졸업)",
+    "positionEn": "M.S. (Graduated in 2026)",
+    "company": "큐브엔지니어링 수자원부 부장",
+    "email": " treesman@nate.com"
+  }
+]

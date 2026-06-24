@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "type": "journal",
+    "title": "Deep Learning-Based Flood Forecasting Model Using Multi-Source Remote Sensing Data",
+    "authors": "Chulsoo Kim, Gildong Hong",
+    "journal": "Journal of Hydrology",
+    "year": 2026,
+    "doi": "https://doi.org/10.1016/j.jhydrol.2026.123456",
+    "status": "Published"
+  },
+  {
+    "id": 2,
+    "type": "conference",
+    "title": "Analysis of Urban Inundation Risk under Extreme Rainfall Events Using Climate Change Scenarios",
+    "authors": "Younghee Lee, Gildong Hong",
+    "journal": "EGU General Assembly 2025",
+    "year": 2025,
+    "doi": "",
+    "status": "Presented"
+  }
+]
