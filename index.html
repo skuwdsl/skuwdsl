@@ -54,7 +54,14 @@
                     </div>
                 </div>
                 <a href="#alumni" class="nav-item" id="nav-link-alumni">Alumni</a>
-                <a href="#publications" class="nav-item" id="nav-link-publications">Publications &amp; Projects</a>
+                <div class="nav-item-dropdown">
+                    <a href="#publications" class="nav-item" id="nav-link-publications">Publications &amp; Projects</a>
+                    <div class="dropdown-menu">
+                        <a href="#publications" class="dropdown-subitem" id="dropdown-pub-all">All</a>
+                        <a href="#publications" class="dropdown-subitem" id="dropdown-pub-publications">Publications</a>
+                        <a href="#publications" class="dropdown-subitem" id="dropdown-pub-project">Research Projects</a>
+                    </div>
+                </div>
             </nav>
 
             <!-- 모바일 토글 버튼 -->
@@ -92,10 +99,10 @@
                     System Laboratory
                 </h1>
                 <p id="hero-tagline" class="fade-in-delayed">
-                    기후 변화와 풍수해 리스크에 대응하는 스마트 수자원 및 자연재해 방재 시스템 연구
+                    기후 위기 시대에 대응하는 데이터 기반의 수자원 관리 및 자연재해 방재 시스템 연구
                 </p>
                 <div class="hero-actions fade-in-delayed">
-                    <a href="#about" class="btn btn-primary" id="btn-learn-more">연구실 알아보기 <i
+                    <a href="#about" class="btn btn-primary" id="btn-learn-more"> About us <i
                             data-lucide="arrow-right"></i></a>
                 </div>
             </div>
@@ -184,8 +191,7 @@
                 <!-- 필터 탭 -->
                 <div class="pub-filter" id="pub-filter-bar">
                     <button class="filter-btn active" data-filter="all" id="filter-all">All</button>
-                    <button class="filter-btn" data-filter="journal" id="filter-journal">Journals</button>
-                    <button class="filter-btn" data-filter="conference" id="filter-conference">Conferences</button>
+                    <button class="filter-btn" data-filter="publications" id="filter-publications">Publications</button>
                     <button class="filter-btn" data-filter="project" id="filter-project">Research Projects</button>
                 </div>
 
@@ -217,10 +223,10 @@
             <div class="footer-brand">
                 <div class="footer-brand-logo">
                     <img src="images/logo1.png" alt="WDSL Logo" class="footer-logo-wdsl">
-                    <div class="footer-brand-text">
-                        <h2>WDSL</h2>
-                        <p>Water &amp; Disaster System Laboratory</p>
-                        <p class="univ-name">서경대학교 풍수해시스템연구실</p>
+                    <div class="logo-text">
+                        <span class="logo-title">WDSL</span>
+                        <span class="logo-eng-title">Water &amp; Disaster System Laboratory</span>
+                        <span class="logo-subtitle">서경대학교 풍수해시스템연구실</span>
                     </div>
                 </div>
                 <img src="images/sku_logo.png" alt="Seokyeong University Logo" class="footer-logo-sku">
@@ -239,7 +245,7 @@
     </footer>
 
     <!-- 자바스크립트 파일 로드 -->
-    <script src="js/main.js"></script>
+    <script src="js/main.js?v=6"></script>
 </body>
 
 </html>
