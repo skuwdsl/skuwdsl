@@ -110,7 +110,6 @@ async function loadMembers() {
 
         members.forEach(member => {
             if (member.role === 'professor') {
-                const tags = member.researchInterests.map(interest => `<span class="tag">${interest}</span>`).join('');
                 const profileImg = member.image || 'images/logo.png';
                 
                 // 경력 정보 리스트 HTML 구성
@@ -129,7 +128,7 @@ async function loadMembers() {
 
                 profHtml = `
                     <div class="professor-card glass" id="member-prof-${member.id}">
-                        <img src="${profileImg}" alt="${member.nameKo}" class="professor-image" onerror="this.src='images/logo.png'">
+                        <img src="${profileImg}" alt="${member.nameKo}" class="professor-image" onerror="this.src='images/default_avatar.png'">
                         <div class="professor-info">
                             <h3>${member.nameKo}</h3>
                             <div class="eng-name">${member.nameEn}</div>
@@ -145,12 +144,6 @@ async function loadMembers() {
                                 </div>
                             </div>
                             ${careerHtml}
-                            <div class="professor-research">
-                                <h4>연구 관심 분야</h4>
-                                <div class="tag-container">
-                                    ${tags}
-                                </div>
-                            </div>
                         </div>
                     </div>
                 `;
@@ -168,7 +161,8 @@ async function loadMembers() {
                     </div>
                 `;
             } else {
-                const tags = member.researchInterests.map(interest => `<span class="tag">${interest}</span>`).join('');
+                const researchInterests = member.researchInterests || [];
+                const tags = researchInterests.map(interest => `<span class="tag">${interest}</span>`).join('');
                 const profileImg = member.image || 'images/logo.png';
                 
                 let companyHtml = '';
@@ -183,7 +177,7 @@ async function loadMembers() {
 
                 studentHtml += `
                     <div class="member-card glass" id="member-student-${member.id}">
-                        <img src="${profileImg}" alt="${member.nameKo}" class="member-avatar" onerror="this.src='images/logo.png'">
+                        <img src="${profileImg}" alt="${member.nameKo}" class="member-avatar" onerror="this.src='images/default_avatar.png'">
                         <h4>${member.nameKo}</h4>
                         <div class="eng-name">${member.nameEn}</div>
                         <div class="position">${member.positionKo}</div>
@@ -243,6 +237,28 @@ async function loadPublications() {
             });
         });
 
+        // 드롭다운 하위 메뉴 아이템 클릭 이벤트 바인딩
+        const dropdownItems = [
+            { id: 'dropdown-pub-all', filter: 'all' },
+            { id: 'dropdown-pub-publications', filter: 'publications' },
+            { id: 'dropdown-pub-project', filter: 'project' }
+        ];
+
+        dropdownItems.forEach(item => {
+            const element = document.getElementById(item.id);
+            if (element) {
+                element.addEventListener('click', () => {
+                    filterButtons.forEach(btn => {
+                        btn.classList.remove('active');
+                        if (btn.getAttribute('data-filter') === item.filter) {
+                            btn.classList.add('active');
+                        }
+                    });
+                    renderPublications(item.filter);
+                });
+            }
+        });
+
     } catch (error) {
         pubListContainer.innerHTML = '<p class="error-msg">실적 및 프로젝트 데이터를 가져오는 데 실패했습니다.</p>';
         throw error;
@@ -263,7 +279,7 @@ function renderPublications(filter) {
 
     // 2. 논문 실적 정렬 및 필터링
     const sortedPubs = [...allPublications].sort((a, b) => b.year - a.year);
-    const filteredPubs = filter === 'all' 
+    const filteredPubs = (filter === 'all' || filter === 'publications')
         ? sortedPubs 
         : sortedPubs.filter(pub => pub.type === filter);
 
@@ -298,13 +314,14 @@ function renderPublications(filter) {
         }).join('');
     }
 
-    // 3. '전체(All)' 필터일 경우 하단에 프로젝트 테이블도 함께 렌더링
+    // 3. '전체(All)' 필터일 경우 하단에 프로젝트 테이블 및 상단에 Publications 타이틀도 함께 렌더링
     if (filter === 'all') {
+        const publicationsHeaderHtml = `<h3 class="group-title" style="margin-top: 0; margin-bottom: 24px;">Publications</h3>`;
         const projectSectionHtml = `
             <h3 class="group-title" style="margin-top: 60px; margin-bottom: 24px;">Research Projects</h3>
             ${generateProjectTableHtml(allProjects)}
         `;
-        pubListContainer.innerHTML = pubHtml + projectSectionHtml;
+        pubListContainer.innerHTML = publicationsHeaderHtml + pubHtml + projectSectionHtml;
     } else {
         pubListContainer.innerHTML = pubHtml;
     }
@@ -348,7 +365,7 @@ function generateProjectTableHtml(projects) {
                         <th>연구과제명</th>
                         <th style="width: 180px;">연구기간</th>
                         <th style="width: 180px;">지원기관</th>
-                        <th style="width: 100px;">역할</th>
+                        <th style="width: 120px;">역할</th>
                     </tr>
                 </thead>
                 <tbody>
