@@ -728,6 +728,12 @@ ul {
     border: 1px solid rgba(100, 150, 255, 0.3);
 }
 
+.pub-badge.book {
+    background: rgba(255, 100, 150, 0.15);
+    color: var(--accent);
+    border: 1px solid rgba(255, 100, 150, 0.3);
+}
+
 .pub-details {
     flex-grow: 1;
 }
