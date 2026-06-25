@@ -1,22 +1,38 @@
 [
   {
     "id": 1,
-    "type": "journal",
-    "title": "Deep Learning-Based Flood Forecasting Model Using Multi-Source Remote Sensing Data",
-    "authors": "Chulsoo Kim, Gildong Hong",
-    "journal": "Journal of Hydrology",
-    "year": 2026,
-    "doi": "https://doi.org/10.1016/j.jhydrol.2026.123456",
+    "type": "book",
+    "title": "수문학·수리학 - 수공구조물 공학설계를 위한",
+    "authors": "윤용남, 안재현, 김태웅",
+    "publisher": "교문사",
+    "year": 2021,
     "status": "Published"
   },
   {
     "id": 2,
-    "type": "conference",
-    "title": "Analysis of Urban Inundation Risk under Extreme Rainfall Events Using Climate Change Scenarios",
-    "authors": "Younghee Lee, Gildong Hong",
-    "journal": "EGU General Assembly 2025",
+    "type": "book",
+    "title": "재난이 끝나도 재해는 남는다",
+    "authors": "안재현",
+    "publisher": "북코리아",
+    "year": 2024,
+    "status": "Published"
+  },
+  {
+    "id": 3,
+    "type": "book",
+    "title": "2025 방재기사실기 - 핵심요약 및 예상문제 300제 + α, 제5판",
+    "authors": "김상호, 김태웅, 류재희, 안재현, 이영식, 장경수",
+    "publisher": "북코리아",
     "year": 2025,
-    "doi": "",
-    "status": "Presented"
+    "status": "Published"
+  },
+  {
+    "id":4,
+    "type": "book",
+    "title": "방재기사필기 - 핵심요약 및 예상문제 1000제 + α, 제7판",
+    "authors": "김상호, 김태웅, 류재희, 안재현, 이영식, 장경수",
+    "publisher": "북코리아",
+    "year": 2025,
+    "status": "Published"
   }
 ]
