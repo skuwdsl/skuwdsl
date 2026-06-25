@@ -288,8 +288,15 @@ function renderPublications(filter) {
         pubHtml = '<p class="no-data">해당 카테고리의 연구 성과가 없습니다.</p>';
     } else {
         pubHtml = filteredPubs.map(pub => {
-            const badgeClass = pub.type === 'journal' ? 'journal' : 'conference';
-            const badgeText = pub.type === 'journal' ? 'Journal' : 'Conference';
+            let badgeClass = 'conference';
+            let badgeText = 'Conference';
+            if (pub.type === 'journal') {
+                badgeClass = 'journal';
+                badgeText = 'Journal';
+            } else if (pub.type === 'book') {
+                badgeClass = 'book';
+                badgeText = 'Book';
+            }
             
             let linkHtml = '';
             if (pub.doi) {
@@ -300,13 +307,15 @@ function renderPublications(filter) {
                 `;
             }
 
+            const journalOrPublisher = pub.journal || pub.publisher || '';
+
             return `
                 <div class="pub-item glass" id="pub-${pub.id}">
                     <span class="pub-badge ${badgeClass}">${badgeText} (${pub.year})</span>
                     <div class="pub-details">
                         <h4 class="pub-title">${pub.title}</h4>
                         <div class="pub-authors">${pub.authors}</div>
-                        <div class="pub-journal">${pub.journal}</div>
+                        <div class="pub-journal">${journalOrPublisher}</div>
                         ${linkHtml}
                     </div>
                 </div>
