@@ -183,9 +183,9 @@ async function loadMembers() {
                         <div class="position">${member.positionKo}</div>
                         ${companyHtml}
                         <div class="email">${member.email}</div>
-                        <div class="interests">
+                        <!-- <div class="interests">
                             ${tags}
-                        </div>
+                        </div> -->
                     </div>
                 `;
             }
