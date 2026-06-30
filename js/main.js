@@ -278,7 +278,7 @@ function renderPublications(filter) {
     }
 
     // 2. 논문 실적 정렬 및 필터링
-    const sortedPubs = [...allPublications].sort((a, b) => b.year - a.year);
+    const sortedPubs = [...allPublications].sort((a, b) => a.id - b.id);
     const filteredPubs = (filter === 'all' || filter === 'publications')
         ? sortedPubs 
         : sortedPubs.filter(pub => pub.type === filter);
@@ -390,6 +390,7 @@ function generateProjectTableHtml(projects) {
  */
 async function loadNews() {
     const newsContainer = document.getElementById('news-container');
+    if (!newsContainer) return;
 
     try {
         const response = await fetch('data/news.json');
