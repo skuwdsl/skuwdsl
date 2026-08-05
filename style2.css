@@ -1039,6 +1039,35 @@ ul {
     flex-grow: 1;
 }
 
+/* 11. 강의 정보 섹션 스타일 (Teaching Section) */
+.teaching-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.teaching-card {
+    padding: 16px 28px;
+    border-left: 3px solid var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 24px;
+    transition: var(--transition-fast);
+}
+
+.teaching-title-eng {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    min-width: 260px;
+}
+
+.teaching-title-kor {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+}
+
 /* 11. 하단 푸터 스타일 (Footer) */
 #global-footer {
     background-color: #ffffff;
@@ -1647,5 +1676,25 @@ ul {
     .alumni-card .position {
         font-size: 0.76rem;
         text-align: right;
+    }
+
+    /* 모바일 화면에서 강의 카드 레이아웃: 영문 과목명 아래 한글 과목명이 2줄로 깔끔하게 배치되도록 처리 */
+    .teaching-card {
+        padding: 14px 18px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+
+    .teaching-title-eng {
+        font-size: 1.02rem;
+        min-width: unset;
+        width: 100%;
+    }
+
+    .teaching-title-kor {
+        font-size: 0.88rem;
+        width: 100%;
+        word-break: keep-all;
     }
 }
