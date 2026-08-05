@@ -13,7 +13,7 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="WDSL-서경대학교 풍수해시스템연구실">
     <meta property="og:description" content="Water & Disaster System Laboratory">
-    <meta property="og:image" content="images/logo1.png">
+    <meta property="og:image" content="images/logo2.png">
     <meta property="og:url" content="https://wdsl.univ.ac.kr">
 
     <!-- 웹 폰트 (Google Fonts) -->
@@ -24,7 +24,7 @@
         rel="stylesheet">
 
     <!-- CSS 스타일시트 -->
-    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="style2.css?v=25">
 
     <!-- Lucide Icons CDN -->
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -35,31 +35,38 @@
     <header id="global-header">
         <div class="header-container">
             <a href="#hero" id="brand-logo" class="logo-link">
-                <img src="images/logo1.png" alt="WDSL Logo" class="logo-img">
+                <img src="images/logo2.png" alt="WDSL Logo" class="logo-img">
                 <div class="logo-text">
-                    <span class="logo-title">WDSL</span>
-                    <span class="logo-eng-title">Water & Disaster System Laboratory</span>
+                    <span class="logo-title">SKU WDSL</span>
+                    <span class="logo-eng-title">Water & Disaster System Lab</span>
                     <span class="logo-subtitle">서경대학교 풍수해시스템연구실</span>
                 </div>
             </a>
 
             <!-- 데스크탑 메뉴 -->
             <nav id="desktop-nav" class="nav-menu">
-                <a href="#about" class="nav-item" id="nav-link-about">About</a>
                 <div class="nav-item-dropdown">
-                    <a href="#members" class="nav-item" id="nav-link-members">Members</a>
+                    <a href="#member" class="nav-item" id="nav-link-member">Member</a>
                     <div class="dropdown-menu">
                         <a href="#professor-title" class="dropdown-subitem">Professor</a>
-                        <a href="#researchers-title" class="dropdown-subitem">Researchers</a>
+                        <a href="#researchers-title" class="dropdown-subitem">Researcher</a>
                     </div>
                 </div>
                 <a href="#alumni" class="nav-item" id="nav-link-alumni">Alumni</a>
                 <div class="nav-item-dropdown">
-                    <a href="#publications" class="nav-item" id="nav-link-publications">Publications &amp; Projects</a>
+                    <a href="#publication" class="nav-item" id="nav-link-publication">Publication</a>
                     <div class="dropdown-menu">
-                        <a href="#publications" class="dropdown-subitem" id="dropdown-pub-all">All</a>
-                        <a href="#publications" class="dropdown-subitem" id="dropdown-pub-publications">Publications</a>
-                        <a href="#publications" class="dropdown-subitem" id="dropdown-pub-project">Research Projects</a>
+                        <a href="#pub-books-title" class="dropdown-subitem">Books</a>
+                        <a href="#pub-int-title" class="dropdown-subitem">International Journals</a>
+                        <a href="#pub-dom-title" class="dropdown-subitem">Domestic Journals</a>
+                    </div>
+                </div>
+                <a href="#project" class="nav-item" id="nav-link-project">Project</a>
+                <div class="nav-item-dropdown">
+                    <a href="#teaching" class="nav-item" id="nav-link-teaching">Teaching</a>
+                    <div class="dropdown-menu">
+                        <a href="#teaching-undergrad-title" class="dropdown-subitem">Undergraduate Course</a>
+                        <a href="#teaching-grad-title" class="dropdown-subitem">Graduate Course</a>
                     </div>
                 </div>
             </nav>
@@ -79,13 +86,30 @@
             </button>
         </div>
         <nav id="mobile-nav" class="drawer-nav">
-            <a href="#about" class="mobile-nav-item">About</a>
-            <a href="#members" class="mobile-nav-item">Members</a>
+            <div class="mobile-nav-item-dropdown">
+                <a href="#member" class="mobile-nav-item">Member</a>
+                <div class="mobile-dropdown-menu">
+                    <a href="#professor-title" class="mobile-dropdown-subitem">Professor</a>
+                    <a href="#researchers-title" class="mobile-dropdown-subitem">Researcher</a>
+                </div>
+            </div>
             <a href="#alumni" class="mobile-nav-item">Alumni</a>
-            <a href="#publications" class="mobile-nav-item">Publications &amp; Projects</a>
-            <!-- 나중에 추가할 수 있도록 News 메뉴 주석 처리
-            <a href="#news" class="mobile-nav-item">News</a>
-            -->
+            <div class="mobile-nav-item-dropdown">
+                <a href="#publication" class="mobile-nav-item" id="mobile-nav-link-publication">Publication</a>
+                <div class="mobile-dropdown-menu">
+                    <a href="#pub-books-title" class="mobile-dropdown-subitem">Books</a>
+                    <a href="#pub-int-title" class="mobile-dropdown-subitem">International Journals</a>
+                    <a href="#pub-dom-title" class="mobile-dropdown-subitem">Domestic Journals</a>
+                </div>
+            </div>
+            <a href="#project" class="mobile-nav-item" id="mobile-nav-link-project">Project</a>
+            <div class="mobile-nav-item-dropdown">
+                <a href="#teaching" class="mobile-nav-item" id="mobile-nav-link-teaching">Teaching</a>
+                <div class="mobile-dropdown-menu">
+                    <a href="#teaching-undergrad-title" class="mobile-dropdown-subitem">Undergraduate Course</a>
+                    <a href="#teaching-grad-title" class="mobile-dropdown-subitem">Graduate Course</a>
+                </div>
+            </div>
         </nav>
     </div>
     <div id="drawer-overlay" class="overlay"></div>
@@ -97,59 +121,21 @@
             <div class="hero-content">
                 <span class="hero-university fade-in">Seokyeong University</span>
                 <h1 id="hero-title" class="fade-in">
-                    <span class="gradient-text">Water & Disaster</span><br>
-                    System Laboratory
+                    <span class="hero-lab-name">Water & Disaster System Lab</span>
                 </h1>
                 <p id="hero-tagline" class="fade-in-delayed">
-                    기후 위기 시대에 대응하는 데이터 기반의 수자원 관리 및 자연재해 방재 시스템 연구
+                    서경대학교 풍수해시스템 연구실
                 </p>
-                <div class="hero-actions fade-in-delayed">
-                    <a href="#about" class="btn btn-primary" id="btn-learn-more"> About us <i
-                            data-lucide="arrow-right"></i></a>
-                </div>
             </div>
         </section>
 
-        <!-- 2. 연구실 소개 섹션 -->
-        <section id="about" class="section-padding">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">About WDSL</h2>
-                    <p class="section-subtitle">Water & Disaster System Laboratory</p>
-                </div>
 
-                <div class="about-grid">
-                    <!-- 비전 카드 -->
-                    <div class="about-card glass" id="card-vision">
-                        <div class="card-icon"><i data-lucide="compass"></i></div>
-                        <h3>Our Vision</h3>
-                        <p>
-                            WDSL은 기후변화로 인해 갈수록 극대화되는 극한 수재해 및 풍수해 현상을 과학적으로 규명하고, 이를 해결하기 위해 인공지능 기술을 융합하여 안전하고 회복력 있는
-                            국가 방재 시스템을 설계하는 것을 목표로 합니다.
-                        </p>
-                    </div>
-
-                    <!-- 핵심 연구 분야 카드 -->
-                    <div class="about-card glass" id="card-research">
-                        <div class="card-icon"><i data-lucide="activity"></i></div>
-                        <h3>Core Research Areas</h3>
-                        <ul class="research-list">
-                            <li><i data-lucide="check" class="list-bullet"></i> 기후변화 대응 방재 및 설계 기준 수립</li>
-                            <li><i data-lucide="check" class="list-bullet"></i> 선제적 재난 관리 및 지능형 예·경보 시스템 구축</li>
-                            <li><i data-lucide="check" class="list-bullet"></i> 홍수 및 가뭄 중심의 극한 수재해 분석 기술</li>
-                            <li><i data-lucide="check" class="list-bullet"></i> 지속 가능한 수자원 관리 및 수문 해석 고도화</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
 
         <!-- 3. 구성원 소개 섹션 -->
-        <section id="members" class="section-padding section-alt">
+        <section id="member" class="section-padding section-alt">
             <div class="container">
                 <div class="section-header">
-                    <h2 class="section-title">Members</h2>
-                    <p class="section-subtitle">연구실을 이끌어가는 구성원을 소개합니다</p>
+                    <h2 class="section-title">Member</h2>
                 </div>
 
                 <!-- 교수 프로필 영역 (JS로 동적 렌더링 예정) -->
@@ -160,7 +146,7 @@
                 </div>
 
                 <!-- 연구원 프로필 영역 (JS로 동적 렌더링 예정) -->
-                <h3 class="group-title" id="researchers-title">Researchers</h3>
+                <h3 class="group-title" id="researchers-title">Researcher</h3>
                 <div id="student-container" class="member-grid">
                     <div class="loading-spinner"></div>
                 </div>
@@ -172,7 +158,6 @@
             <div class="container">
                 <div class="section-header">
                     <h2 class="section-title">Alumni</h2>
-                    <p class="section-subtitle">WDSL의 자랑스러운 졸업생들입니다</p>
                 </div>
 
                 <!-- 졸업생 목록 영역 (JS로 동적 렌더링 예정) -->
@@ -182,51 +167,76 @@
             </div>
         </section>
 
-        <!-- 4. 연구 실적 섹션 -->
-        <section id="publications" class="section-padding">
+        <!-- 4. 연구 실적 섹션 (Publication) -->
+        <section id="publication" class="section-padding">
             <div class="container">
                 <div class="section-header">
-                    <h2 class="section-title">Publications &amp; Projects</h2>
-                    <p class="section-subtitle">WDSL의 최신 연구 성과 및 주요 연구 과제입니다</p>
+                    <h2 class="section-title">Publication</h2>
                 </div>
 
-                <!-- 필터 탭 -->
-                <div class="pub-filter" id="pub-filter-bar">
-                    <button class="filter-btn active" data-filter="all" id="filter-all">All</button>
-                    <button class="filter-btn" data-filter="publications" id="filter-publications">Publications</button>
-                    <button class="filter-btn" data-filter="project" id="filter-project">Research Projects</button>
+                <!-- 1) 저역서 영역 -->
+                <h3 class="group-title" id="pub-books-title">Books</h3>
+                <div id="pub-books-container" class="pub-list">
+                    <div class="loading-spinner"></div>
                 </div>
 
-                <!-- 논문 목록 (JS로 동적 렌더링) -->
-                <div id="pub-list-container" class="pub-list">
+                <!-- 2) 국제학술지 영역 -->
+                <h3 class="group-title" id="pub-int-title" style="margin-top: 48px;">International Journals</h3>
+                <div id="pub-int-container" class="pub-list">
+                    <div class="loading-spinner"></div>
+                </div>
+
+                <!-- 3) 국내학술지 영역 -->
+                <h3 class="group-title" id="pub-dom-title" style="margin-top: 48px;">Domestic Journals</h3>
+                <div id="pub-dom-container" class="pub-list">
                     <div class="loading-spinner"></div>
                 </div>
             </div>
         </section>
 
-        <!-- 5. 소식 및 공지사항 섹션 (나중에 추가할 수 있도록 주석 처리)
-        <section id="news" class="section-padding section-alt">
+        <!-- 4-2. 연구 과제 섹션 (Project) -->
+        <section id="project" class="section-padding section-alt">
             <div class="container">
                 <div class="section-header">
-                    <h2 class="section-title">News &amp; Notice</h2>
-                    <p class="section-subtitle">연구실의 새로운 소식과 안내사항입니다</p>
+                    <h2 class="section-title">Project</h2>
                 </div>
 
-                <div id="news-container" class="news-grid">
+                <!-- 프로젝트 목록 (JS로 동적 렌더링) -->
+                <div id="project-list-container" class="project-list">
                     <div class="loading-spinner"></div>
                 </div>
             </div>
         </section>
-        -->
+
+        <!-- 5. 강의 정보 섹션 -->
+        <section id="teaching" class="section-padding">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Teaching</h2>
+                </div>
+
+                <!-- 1) 학부 과정 -->
+                <h3 class="group-title" id="teaching-undergrad-title">Undergraduate Course</h3>
+                <div id="teaching-undergrad-container" class="teaching-container" style="margin-top: 16px; margin-bottom: 48px;">
+                    <div class="loading-spinner"></div>
+                </div>
+
+                <!-- 2) 대학원 과정 -->
+                <h3 class="group-title" id="teaching-grad-title">Graduate Course</h3>
+                <div id="teaching-grad-container" class="teaching-container" style="margin-top: 16px;">
+                    <div class="loading-spinner"></div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer id="global-footer">
         <div class="container footer-content">
             <div class="footer-brand">
                 <div class="footer-brand-logo">
-                    <img src="images/logo1.png" alt="WDSL Logo" class="footer-logo-wdsl">
+                    <img src="images/logo2.png" alt="WDSL Logo" class="footer-logo-wdsl">
                     <div class="logo-text">
-                        <span class="logo-title">WDSL</span>
+                        <span class="logo-title">SKU WDSL</span>
                         <span class="logo-eng-title">Water &amp; Disaster System Laboratory</span>
                         <span class="logo-subtitle">서경대학교 풍수해시스템연구실</span>
                     </div>
@@ -247,7 +257,7 @@
     </footer>
 
     <!-- 자바스크립트 파일 로드 -->
-    <script src="js/main.js?v=10"></script>
+    <script src="js/main.js?v=18"></script>
 </body>
 
 </html>

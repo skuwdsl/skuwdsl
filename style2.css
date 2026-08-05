@@ -86,14 +86,19 @@ ul {
 
 .section-padding {
     padding: 100px 0;
+    /* 모든 섹션의 배경색을 정방향 그라데이션으로 통일하여 접경면의 톤 단차 유도 */
+    background: linear-gradient(180deg, var(--bg-dark) 0%, var(--bg-dark-alt) 100%);
+    /* 섹션 간의 확실한 구분을 위해 하단에 미세한 경계선 추가 */
+    border-bottom: 1px solid var(--border-glass);
 }
 
 .section-alt {
-    background-color: var(--bg-dark-alt);
+    /* 톤의 일관성을 유지하기 위해 동일한 정방향 그라데이션 적용 */
+    background: linear-gradient(180deg, var(--bg-dark) 0%, var(--bg-dark-alt) 100%);
 }
 
 .section-header {
-    text-align: center;
+    text-align: left;
     margin-bottom: 60px;
 }
 
@@ -270,6 +275,7 @@ ul {
 
 .nav-menu {
     display: flex;
+    align-items: center;
     gap: 32px;
 }
 
@@ -314,7 +320,7 @@ ul {
     top: 100%;
     left: 50%;
     transform: translateX(-50%) translateY(10px);
-    width: 180px;
+    min-width: 280px;
     background: var(--bg-glass);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
@@ -393,16 +399,61 @@ ul {
     gap: 24px;
 }
 
+.mobile-nav-item-dropdown {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
 .mobile-nav-item {
     font-family: var(--font-heading);
     font-size: 1.4rem;
     font-weight: 600;
     color: var(--text-secondary);
+    transition: var(--transition-fast);
 }
 
 .mobile-nav-item:hover {
     color: var(--primary);
-    padding-left: 8px;
+    padding-left: 4px;
+}
+
+.mobile-dropdown-menu {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding-left: 12px;
+    margin-top: 0;
+}
+
+.mobile-nav-item-dropdown:hover .mobile-dropdown-menu,
+.mobile-nav-item-dropdown:focus-within .mobile-dropdown-menu,
+.mobile-nav-item-dropdown.active .mobile-dropdown-menu {
+    max-height: 300px;
+    opacity: 1;
+    margin-top: 10px;
+}
+
+.mobile-dropdown-subitem {
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    padding: 8px 14px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: var(--transition-fast);
+}
+
+.mobile-dropdown-subitem:hover {
+    color: var(--primary);
+    background: rgba(var(--primary-rgb), 0.12);
+    border-color: rgba(var(--primary-rgb), 0.2);
+    padding-left: 18px;
 }
 
 .overlay {
@@ -451,37 +502,43 @@ ul {
 .hero-university {
     display: inline-block;
     font-family: var(--font-heading);
-    font-size: 2.5rem;
+    font-size: 3.6rem;
     font-weight: 800;
-    color: hsl(150, 83%, 23%);
-    /* 서경대학교 상징 초록색 계열 */
+    color: #0a6635; /* 로고 초록색 계열 */
     letter-spacing: 0.05em;
-    text-transform: uppercase;
-    margin-bottom: 12px;
+    margin-bottom: 16px;
 }
 
 .hero-content {
     position: relative;
     z-index: 1;
-    max-width: 1100px;
+    max-width: 1200px;
     padding: 0 24px;
 }
 
 .hero-content h1 {
     font-family: var(--font-heading);
-    font-size: 5rem;
-    font-weight: 800;
-    line-height: 1.05;
+    font-size: 5.4rem;
+    font-weight: 900;
+    line-height: 1.1;
     margin-bottom: 24px;
     letter-spacing: -0.03em;
 }
 
+.hero-lab-name {
+    color: #004c87; /* 상단 로고 영문 색상과 100% 동일한 딥 럭셔리 네이비 블루 */
+    -webkit-text-fill-color: #004c87;
+    background: none;
+    font-weight: 900;
+}
+
 .hero-content p {
-    font-size: 1.7rem;
-    color: var(--text-secondary);
+    font-size: 2.1rem;
+    color: #1a3a5c; /* 뚜렷하고 짙은 네이비 톤 */
     max-width: 100%;
     margin: 0 auto 40px auto;
-    font-weight: 300;
+    font-weight: 700;
+    letter-spacing: -0.02em;
 }
 
 .hero-actions {
@@ -589,9 +646,7 @@ ul {
 
 /* 교수 카드 스타일 (가로 배치 레이아웃) */
 .professor-card {
-    display: grid;
-    grid-template-columns: 270px 1fr;
-    gap: 40px;
+    display: block;
     padding: 40px;
 }
 
@@ -671,73 +726,58 @@ ul {
     color: var(--text-secondary);
 }
 
-/* 연구원 카드 그리드 */
+/* 연구원 카드 리스트 (한 줄에 한 명 및 가로 일렬 정렬) */
 .member-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 
 .member-card {
-    padding: 24px;
-    display: flex;
-    flex-direction: column;
+    width: 100%;
+    padding: 16px 28px;
+    display: grid;
+    grid-template-columns: 110px 160px 120px auto;
     align-items: center;
-    text-align: center;
-}
-
-.member-avatar {
-    width: 150px;
-    aspect-ratio: 3/4; /* 교수 프로필 사진 비율과 일치 */
-    border-radius: 12px; /* 교수 프로필 둥글기 12px과 일치 */
-    object-fit: cover;
-    margin-bottom: 20px;
-    border: 1px solid var(--border-glass);
-    transition: var(--transition-normal);
+    text-align: left;
+    gap: 24px;
+    border-left: 3px solid var(--primary);
 }
 
 .member-card h4 {
-    font-size: 1.25rem;
+    font-size: 1.15rem;
     font-weight: 700;
+    margin: 0;
 }
 
 .member-card .eng-name {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     color: var(--text-secondary);
-    margin-bottom: 4px;
+    margin: 0;
 }
 
 .member-card .position {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     color: var(--primary);
-    margin-bottom: 16px;
-    font-weight: 500;
+    margin: 0;
+    font-weight: 600;
+    white-space: nowrap;
 }
 
 .member-card .company {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     color: var(--primary);
-    margin-bottom: 8px;
+    margin: 0;
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 4px;
+    gap: 6px;
 }
 
 .member-card .email {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     color: var(--text-muted);
-    margin-bottom: 16px;
-}
-
-.member-card .interests {
-    border-top: 1px solid var(--border-glass);
-    padding-top: 16px;
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-    justify-content: center;
+    margin: 0;
+    white-space: nowrap;
 }
 
 /* 9. 연구 실적 섹션 스타일 (Publications Section) */
@@ -909,7 +949,7 @@ ul {
 
 /* 11. 하단 푸터 스타일 (Footer) */
 #global-footer {
-    background-color: var(--bg-dark-alt);
+    background-color: #ffffff;
     border-top: 1px solid var(--border-glass);
     padding: 60px 0 20px 0;
 }
@@ -1004,50 +1044,57 @@ ul {
 
 /* 11-2. 졸업생 스타일 (Alumni Section) */
 .alumni-list-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
     margin-top: 20px;
 }
 
 .alumni-card {
-    padding: 24px;
-    display: flex;
-    flex-direction: column;
+    padding: 16px 28px;
+    display: grid;
+    grid-template-columns: 110px 240px auto;
+    align-items: center;
+    text-align: left;
+    gap: 24px;
     border-left: 3px solid var(--primary);
 }
 
 .alumni-card h4 {
     font-size: 1.15rem;
     font-weight: 700;
-    margin-bottom: 2px;
+    margin: 0;
 }
 
 .alumni-card .eng-name {
-    font-size: 0.85rem;
+    font-size: 0.95rem;
     color: var(--text-secondary);
-    margin-bottom: 4px;
+    margin: 0;
 }
 
 .alumni-card .position {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     color: var(--text-muted);
-    margin-bottom: 12px;
+    margin: 0;
+    text-align: left;
+    white-space: nowrap;
 }
 
 .alumni-card .company {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     color: var(--primary);
     font-weight: 600;
-    margin-bottom: 8px;
+    margin: 0;
     display: flex;
     align-items: center;
     gap: 6px;
 }
 
 .alumni-card .email {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     color: var(--text-muted);
+    margin: 0;
+    margin-left: auto;
     word-break: break-all;
 }
 
@@ -1129,7 +1176,111 @@ ul {
     border: 1px solid rgba(100, 150, 255, 0.3);
 }
 
+/* Publication 필터 버튼 스타일 */
+.publication-filter-buttons {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 28px;
+    flex-wrap: wrap;
+}
+
+.pub-filter-btn {
+    padding: 10px 22px;
+    border-radius: 30px;
+    border: 1px solid rgba(0, 102, 204, 0.2);
+    background: rgba(255, 255, 255, 0.8);
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    backdrop-filter: blur(8px);
+}
+
+.pub-filter-btn:hover {
+    background: rgba(0, 102, 204, 0.1);
+    color: var(--primary);
+    border-color: var(--primary);
+    transform: translateY(-2px);
+}
+
+.pub-filter-btn.active {
+    background: var(--primary);
+    color: #ffffff;
+    border-color: var(--primary);
+    box-shadow: 0 4px 14px rgba(0, 102, 204, 0.35);
+    transform: translateY(-1px);
+}
+
 /* 12. 미디어 쿼리 (반응형 대응) */
+
+/* 데스크탑 화면 축소 시 메뉴 깨짐 방지 (1300px 이하) */
+@media (max-width: 1300px) {
+    .nav-menu {
+        gap: 24px;
+    }
+    .nav-item {
+        font-size: 1.15rem;
+    }
+    .logo-img {
+        height: 85px;
+    }
+    #global-header.scrolled .logo-img {
+        height: 70px;
+    }
+    .logo-title {
+        font-size: 2.1rem;
+    }
+    #global-header.scrolled .logo-title {
+        font-size: 1.8rem;
+    }
+    .logo-eng-title {
+        font-size: 1.3rem;
+    }
+    #global-header.scrolled .logo-eng-title {
+        font-size: 1.1rem;
+    }
+    .logo-subtitle {
+        font-size: 1.05rem;
+    }
+    #global-header.scrolled .logo-subtitle {
+        font-size: 0.9rem;
+    }
+}
+
+/* 데스크탑 화면 축소 시 메뉴 깨짐 방지 (1150px 이하) */
+@media (max-width: 1150px) {
+    .nav-menu {
+        gap: 16px;
+    }
+    .nav-item {
+        font-size: 1.05rem;
+    }
+    .logo-img {
+        height: 75px;
+    }
+    #global-header.scrolled .logo-img {
+        height: 65px;
+    }
+    .logo-title {
+        font-size: 1.8rem;
+    }
+    #global-header.scrolled .logo-title {
+        font-size: 1.6rem;
+    }
+    .logo-eng-title {
+        font-size: 1.1rem;
+    }
+    #global-header.scrolled .logo-eng-title {
+        font-size: 0.95rem;
+    }
+    .logo-subtitle {
+        font-size: 0.9rem;
+    }
+    #global-header.scrolled .logo-subtitle {
+        font-size: 0.8rem;
+    }
+}
 
 /* 태블릿 해상도 대응 (최대 992px) */
 @media (max-width: 992px) {
@@ -1180,7 +1331,7 @@ ul {
     }
 
     .hero-university {
-        font-size: 1.8rem;
+        font-size: 2.3rem;
     }
 
     .hero-content h1 {
@@ -1197,8 +1348,7 @@ ul {
     }
 
     .professor-card {
-        grid-template-columns: 180px 1fr;
-        gap: 30px;
+        display: block;
         padding: 30px;
     }
 
@@ -1274,7 +1424,7 @@ ul {
     }
 
     .hero-university {
-        font-size: 1.3rem;
+        font-size: 1.6rem;
         margin-bottom: 8px;
     }
 
@@ -1316,7 +1466,7 @@ ul {
     }
 
     .professor-card {
-        grid-template-columns: 1fr;
+        display: block;
         text-align: center;
         padding: 24px;
     }
