@@ -1044,6 +1044,7 @@ ul {
     display: flex;
     flex-direction: column;
     gap: 16px;
+    text-align: left;
 }
 
 .teaching-card {
@@ -1054,6 +1055,7 @@ ul {
     justify-content: flex-start;
     gap: 24px;
     transition: var(--transition-fast);
+    text-align: left;
 }
 
 .teaching-title-eng {
@@ -1061,11 +1063,13 @@ ul {
     font-size: 1.1rem;
     color: var(--text-primary);
     min-width: 260px;
+    text-align: left;
 }
 
 .teaching-title-kor {
     font-size: 0.95rem;
     color: var(--text-muted);
+    text-align: left;
 }
 
 /* 11. 하단 푸터 스타일 (Footer) */
@@ -1678,23 +1682,27 @@ ul {
         text-align: right;
     }
 
-    /* 모바일 화면에서 강의 카드 레이아웃: 영문 과목명 아래 한글 과목명이 2줄로 깔끔하게 배치되도록 처리 */
+    /* 모바일 화면에서 강의 카드 레이아웃: 영문 과목명 아래 한글 과목명이 2줄로 깔끔하게 좌측 정렬되어 배치되도록 처리 */
     .teaching-card {
         padding: 14px 18px;
         flex-direction: column;
         align-items: flex-start;
+        justify-content: flex-start;
         gap: 6px;
+        text-align: left;
     }
 
     .teaching-title-eng {
         font-size: 1.02rem;
         min-width: unset;
         width: 100%;
+        text-align: left;
     }
 
     .teaching-title-kor {
         font-size: 0.88rem;
         width: 100%;
         word-break: keep-all;
+        text-align: left;
     }
 }
