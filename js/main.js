@@ -471,15 +471,15 @@ function renderTeachingItems(courses, container) {
     }
 
     container.innerHTML = `
-        <div class="teaching-list" style="display: flex; flex-direction: column; gap: 16px;">
+        <div class="teaching-list">
             ${courses.map(course => {
                 const parts = course.split(',');
                 const eng = parts[0] ? parts[0].trim() : course;
                 const kor = parts[1] ? parts[1].trim() : '';
                 return `
-                    <div class="teaching-card glass" style="padding: 16px 28px; border-left: 3px solid var(--primary); display: flex; align-items: center; justify-content: flex-start; gap: 24px;">
-                        <div style="font-weight: 700; font-size: 1.1rem; color: var(--text-primary); min-width: 280px;">${eng}</div>
-                        ${kor ? `<div style="font-size: 0.95rem; color: var(--text-muted);">${kor}</div>` : ''}
+                    <div class="teaching-card glass">
+                        <div class="teaching-title-eng">${eng}</div>
+                        ${kor ? `<div class="teaching-title-kor">${kor}</div>` : ''}
                     </div>
                 `;
             }).join('')}
