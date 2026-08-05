@@ -737,38 +737,43 @@ ul {
     color: var(--text-secondary);
 }
 
-/* 연구원 카드 리스트 (한 줄에 한 명 및 가로 일렬 정렬) */
+/* 연구원 카드 리스트 (가로 일렬 정렬 및 가로 스크롤 지원) */
 .member-grid {
     display: flex;
     flex-direction: column;
     gap: 16px;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 6px;
 }
 
 .member-card {
     width: 100%;
-    padding: 16px 28px;
+    min-width: 560px;
+    padding: 16px 24px;
     display: grid;
-    grid-template-columns: 110px 160px 120px auto;
+    grid-template-columns: 100px 140px 110px auto;
     align-items: center;
     text-align: left;
-    gap: 24px;
+    gap: 16px;
     border-left: 3px solid var(--primary);
 }
 
 .member-card h4 {
-    font-size: 1.15rem;
+    font-size: 1.05rem;
     font-weight: 700;
     margin: 0;
 }
 
 .member-card .eng-name {
-    font-size: 0.95rem;
+    font-size: 0.88rem;
     color: var(--text-secondary);
     margin: 0;
 }
 
 .member-card .position {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: var(--primary);
     margin: 0;
     font-weight: 600;
@@ -776,7 +781,7 @@ ul {
 }
 
 .member-card .company {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: var(--primary);
     margin: 0;
     display: flex;
@@ -785,10 +790,86 @@ ul {
 }
 
 .member-card .email {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: var(--text-muted);
     margin: 0;
     white-space: nowrap;
+}
+
+/* 졸업생 카드 리스트 스타일 (3열 가로 일렬 및 우측 밀착 정렬) */
+.alumni-list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+.alumni-card {
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 80px 1fr auto;
+    align-items: center;
+    gap: 12px;
+    border-left: 3px solid var(--secondary);
+    transition: var(--transition-fast);
+    background: var(--bg-glass);
+}
+
+.alumni-card h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 0;
+    color: var(--text-primary);
+    white-space: nowrap;
+}
+
+.alumni-card .company {
+    font-size: 0.85rem;
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin: 0;
+}
+
+.alumni-card .position {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    white-space: nowrap;
+    text-align: right;
+    margin: 0;
+}
+
+/* 가로 스크롤바 커스텀 스타일링 (연구원, 졸업생, 논문/프로젝트 테이블) */
+.member-grid::-webkit-scrollbar,
+.alumni-list-container::-webkit-scrollbar,
+.project-table-container::-webkit-scrollbar {
+    height: 6px;
+}
+
+.member-grid::-webkit-scrollbar-track,
+.alumni-list-container::-webkit-scrollbar-track,
+.project-table-container::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.04);
+    border-radius: 4px;
+}
+
+.member-grid::-webkit-scrollbar-thumb,
+.alumni-list-container::-webkit-scrollbar-thumb,
+.project-table-container::-webkit-scrollbar-thumb {
+    background: rgba(var(--primary-rgb), 0.4);
+    border-radius: 4px;
+}
+
+.member-grid::-webkit-scrollbar-thumb:hover,
+.alumni-list-container::-webkit-scrollbar-thumb:hover,
+.project-table-container::-webkit-scrollbar-thumb:hover {
+    background: var(--primary);
 }
 
 /* 9. 연구 실적 섹션 스타일 (Publications Section) */
@@ -1472,21 +1553,38 @@ ul {
 
     .professor-card {
         display: block;
-        text-align: center;
+        text-align: left;
         padding: 24px;
     }
 
     .professor-image {
         max-width: 200px;
-        margin: 0 auto;
+        margin: 0 0 24px 0;
+    }
+
+    .professor-info,
+    .professor-info h3,
+    .professor-info .eng-name,
+    .professor-info .position,
+    .professor-meta,
+    .meta-item,
+    .professor-education,
+    .professor-career,
+    .professor-award,
+    .education-list,
+    .career-list,
+    .award-list {
+        text-align: left;
+        align-items: flex-start;
+        justify-content: flex-start;
     }
 
     .professor-meta {
-        align-items: center;
+        align-items: flex-start;
     }
 
     .tag-container {
-        justify-content: center;
+        justify-content: flex-start;
     }
 
     .pub-item {
@@ -1502,5 +1600,52 @@ ul {
     .news-grid {
         grid-template-columns: 1fr;
         gap: 20px;
+    }
+
+    /* 모바일 화면에서 연구원 및 졸업생 카드 최적화 */
+    .member-card {
+        padding: 12px 16px;
+        gap: 10px;
+        grid-template-columns: 75px 120px 85px auto;
+        min-width: 480px;
+    }
+
+    .member-card h4 {
+        font-size: 0.92rem;
+    }
+
+    .member-card .eng-name {
+        font-size: 0.8rem;
+    }
+
+    .member-card .position {
+        font-size: 0.78rem;
+    }
+
+    .member-card .email {
+        font-size: 0.78rem;
+    }
+
+    .alumni-list-container {
+        gap: 8px;
+    }
+
+    .alumni-card {
+        padding: 9px 12px;
+        gap: 8px;
+        grid-template-columns: 65px 1fr auto;
+    }
+
+    .alumni-card h4 {
+        font-size: 0.92rem;
+    }
+
+    .alumni-card .company {
+        font-size: 0.8rem;
+    }
+
+    .alumni-card .position {
+        font-size: 0.76rem;
+        text-align: right;
     }
 }
