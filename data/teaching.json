@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "category": "Undergraduate Course",
+    "courses": [
+      "Hydraulics, 수리학",  
+      "Hydrology, 수문학",
+      "Water Supply and Sewerage, 상하수도 공학",
+      "Water Resources Engineering, 수자원 공학"
+    ]
+  },
+  {
+    "id": 2,
+    "category": "Graduate Course",
+    "courses": [
+      "Deterministic Hydrology, 확정론적 수문학",
+      "Stochastic Hydrology, 추계학적 수문학",
+      "Urban Hydrology, 도시수문학",
+      "Disaster Management, 재난관리론"
+    ]
+  }
+]

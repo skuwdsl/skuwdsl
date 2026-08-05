@@ -2,15 +2,6 @@
   {
     "id": 1,
     "type": "book",
-    "title": "수문학·수리학 - 수공구조물 공학설계를 위한",
-    "authors": "윤용남, 안재현, 김태웅",
-    "publisher": "교문사",
-    "year": 2021,
-    "status": "Published"
-  },
-  {
-    "id": 2,
-    "type": "book",
     "title": "재난이 끝나도 재해는 남는다",
     "authors": "안재현",
     "publisher": "북코리아",
@@ -18,21 +9,930 @@
     "status": "Published"
   },
   {
+    "id": 2,
+    "type": "book",
+    "title": "비욘드워터",
+    "authors": "안재현",
+    "publisher": "교문사",
+    "year": 2021,
+    "status": "Published"
+  },
+  {
     "id": 3,
     "type": "book",
-    "title": "2025 방재기사실기 - 핵심요약 및 예상문제 300제 + α, 제5판",
-    "authors": "김상호, 김태웅, 류재희, 안재현, 이영식, 장경수",
-    "publisher": "북코리아",
-    "year": 2025,
+    "title": "방재안전학1",
+    "authors": "안재현",
+    "publisher": "비앤엠북스",
+    "year": 2021,
     "status": "Published"
   },
   {
     "id": 4,
     "type": "book",
-    "title": "방재기사필기 - 핵심요약 및 예상문제 1000제 + α, 제7판",
-    "authors": "김상호, 김태웅, 류재희, 안재현, 이영식, 장경수",
+    "title": "수문학·수리학 - 수공구조물 공학설계를 위한",
+    "authors": "윤용남, 안재현, 김태웅",
+    "publisher": "교문사",
+    "year": 2021,
+    "status": "Published"
+  },
+  {
+    "id": 5,
+    "type": "book",
+    "title": "재난복구론",
+    "authors": "안재현",
     "publisher": "북코리아",
+    "year": 2018,
+    "status": "Published"
+  },
+  {
+    "id": 6,
+    "type": "book",
+    "title": "재해분석론",
+    "authors": "안재현",
+    "publisher": "북코리아",
+    "year": 2016,
+    "status": "Published"
+  },
+  {
+    "id": 7,
+    "type": "book",
+    "title": "재난관리론",
+    "authors": "안재현",
+    "publisher": "북코리아",
+    "year": 2016,
+    "status": "Published"
+  },
+  {
+    "id": 8,
+    "type": "book",
+    "title": "물위를 걸어온 과학자들",
+    "authors": "안재현",
+    "publisher": "한티미디어",
+    "year": 2012,
+    "status": "Published"
+  },
+  {
+    "id": 9,
+    "type": "book",
+    "title": "방재사전",
+    "authors": "안재현",
+    "publisher": "알앤디프레스",
+    "year": 2011,
+    "status": "Published"
+  },
+  {
+    "id": 10,
+    "type": "int-journal",
+    "title": "Risks of heat waves in South Korea using structural equation modeling and entropy weighting",
+    "authors": "Kim, D., J.E. Kim, J. Song, S.W. Lee, J. Ahn, T. Kim",
+    "journal": "Stochastic Environmental Research and Risk Assessment",
+    "year": 2024,
+    "status": "Published"
+  },
+  {
+    "id": 11,
+    "type": "int-journal",
+    "title": "Hybrid Statistical Process Control Method for Water Distribution Pipe Burst Detection.",
+    "authors": "Ahn, J., D. Jung",
+    "journal": "J. of Water Resources Planning and Management",
+    "year": 2019,
+    "status": "Published"
+  },
+  {
+    "id": 12,
+    "type": "int-journal",
+    "title": "Change in Extreme Precipitation over North Korea Using Multiple Climate Change Scenarios",
+    "authors": "Kwon, M., J.H. Sung, J. Ahn",
+    "journal": "Water",
+    "year": 2019,
+    "status": "Published"
+  },
+  {
+    "id": 13,
+    "type": "int-journal",
+    "title": "Excess Stormwater Quantification in Ungauged Watersheds Using an Event-Based Modified NRCS Model.",
+    "authors": "Muhammad Ajmal, Jae-Hyun Ahn, Tae-Woong Kim",
+    "journal": "Water Resources Management",
+    "year": 2016,
+    "status": "Published"
+  },
+  {
+    "id": 14,
+    "type": "int-journal",
+    "title": "Investigating practical alternatives to the NRCS-CN method for direct runoff estimation using slope-adjusted curve numbers.",
+    "authors": "Moon, Geon-Woo, Muhammad Ajmal, Jae-Hyun Ahn, Tae-Woong Kim",
+    "journal": "KSCE Journal of Civil Engineering",
+    "year": 2016,
+    "status": "Published"
+  },
+  {
+    "id": 15,
+    "type": "int-journal",
+    "title": "Runoff Estimation Using the NRCS Slpe-Adjusted Curve Number in Mountainous Watersheds.",
+    "authors": "Muhammad Ajmal, Muhammad Waseem, Jae-Hyun Ahn, and Tae-Woong Kim",
+    "journal": "Journal of Irrigation and Drainage Engineering",
+    "year": 2016,
+    "status": "Published"
+  },
+  {
+    "id": 16,
+    "type": "int-journal",
+    "title": "Improved Runoff Estimation Using Event-Based Rainfall-Runoff Models.",
+    "authors": "Muhammad Ajmal, Muhammad Waseem, Jae-Hyun Ahn, Tae-Woong Kim",
+    "journal": "Water Resources Management",
+    "year": 2015,
+    "status": "Published"
+  },
+  {
+    "id": 17,
+    "type": "int-journal",
+    "title": "Investigation of SCS-CN and its inspired modified models for runoff estimation in South Korean watersheds.",
+    "authors": "Muhammad Ajmal, Geon-woo Moon, Jae-hyun Ahn, Tae-woong Kim",
+    "journal": "Journal of Hydro-environment Research",
+    "year": 2015,
+    "status": "Published"
+  },
+  {
+    "id": 18,
+    "type": "int-journal",
+    "title": "Optimal planning of water supply system for long-term sustainability.",
+    "authors": "Ahn, J. and D, Kang",
+    "journal": "Journal of Hydro-environment Research",
+    "year": 2014,
+    "status": "Published"
+  },
+  {
+    "id": 19,
+    "type": "int-journal",
+    "title": "A new flood index for use in evaluation of local flood severity : A case study of small ungauged catchments in Korea.",
+    "authors": "Ahn, J. and H.I., Choi",
+    "journal": "Journal of the American Water Resources Association",
+    "year": 2013,
+    "status": "Published"
+  },
+  {
+    "id": 20,
+    "type": "int-journal",
+    "title": "Drought frequency analysis using cluster analysis and bivariate probability distribution.",
+    "authors": "Yoo, J., H. Kwon, T.W. Kim, J. Ahn",
+    "journal": "Journal of Hydrology",
+    "year": 2012,
+    "status": "Published"
+  },
+  {
+    "id": 21,
+    "type": "int-journal",
+    "title": "Influence of climate variation on seasonal precipitation in the Colorado River Basin.",
+    "authors": "Kim, T.W, C. Yoo, J. Ahn",
+    "journal": "Stochastic Environmental Research and Risk Assessment",
+    "year": 2008,
+    "status": "Published"
+  },
+  {
+    "id": 22,
+    "type": "int-journal",
+    "title": "Nonlinear Modeling of El Nino/Southern Oscillation Index.",
+    "authors": "Ahn, J., H.S. Kim",
+    "journal": "Journal of Hydrologic Engineering",
+    "year": 2005,
+    "status": "Published"
+  },
+  {
+    "id": 23,
+    "type": "int-journal",
+    "title": "On the Variation of Frequency-Based Rainfall Amounts : A Case Study for Evaluating Recent Extreme Rainfalls in Korea",
+    "authors": "Ahn, J., T.W. Kim, C. Yoo, Y.N. Yoon",
+    "journal": "Stochastic Environmental Research and Risk Assessment",
+    "year": 2003,
+    "status": "Published"
+  },
+  {
+    "id": 24,
+    "type": "int-journal",
+    "title": "Estimating Characteristics of Rainfall and Their Effects on Sampling Schemes : Case Study for Han River Basin, Korea",
+    "authors": "Yoo, C., K. Jung, J. Ahn",
+    "journal": "Journal of Hydrologic Engineering",
+    "year": 2003,
+    "status": "Published"
+  },
+  {
+    "id": 25,
+    "type": "dom-journal",
+    "title": "설계강우량 Huff 시간분포 회귀식에 관한 비교연구",
+    "authors": "백유현, 박민석, 안재현",
+    "journal": "한국수자원학회 논문집",
     "year": 2025,
+    "status": "Published"
+  },
+  {
+    "id": 26,
+    "type": "dom-journal",
+    "title": "가능최대강수량 포락곡선 개선방안 연구",
+    "authors": "백유현, 안재현, 조현국",
+    "journal": "한국수자원학회 논문집",
+    "year": 2024,
+    "status": "Published"
+  },
+  {
+    "id": 27,
+    "type": "dom-journal",
+    "title": "군집분석을 통한 폭염특보 구역 세분화에 관한 연구",
+    "authors": "문남기, 염웅선, 박동혁, 안재현",
+    "journal": "한국방재학회 논문집",
+    "year": 2023,
+    "status": "Published"
+  },
+  {
+    "id": 28,
+    "type": "dom-journal",
+    "title": "폭염위험지수를 활용한 행정구역별 폭염 위기경보 발령 기준 설정",
+    "authors": "김동욱, 염웅선, 송주일, 안재현",
+    "journal": "한국방재학회 논문집",
+    "year": 2022,
+    "status": "Published"
+  },
+  {
+    "id": 29,
+    "type": "dom-journal",
+    "title": "위성자료를 활용한 미계측유역의 홍수피해액 추산기법 개발 및 적용",
+    "authors": "염웅선, 박동혁, 안재현",
+    "journal": "한국수자원학회 논문집",
+    "year": 2020,
+    "status": "Published"
+  },
+  {
+    "id": 30,
+    "type": "dom-journal",
+    "title": "비정형 데이터를 활용한 가뭄평가 : 보령지역을 중심으로",
+    "authors": "정진홍, 박동혁, 안재현",
+    "journal": "한국수자원학회 논문집",
+    "year": 2020,
+    "status": "Published"
+  },
+  {
+    "id": 31,
+    "type": "dom-journal",
+    "title": "앙상블 경험적 모드분해법을 활용한 북한지역 극한강수량 전망",
+    "authors": "염웅선, 박동혁, 안재현",
+    "journal": "한국수자원학회 논문집",
+    "year": 2019,
+    "status": "Published"
+  },
+  {
+    "id": 32,
+    "type": "dom-journal",
+    "title": "RCP기후변화 시나리오를 활용한 남북공유하천유역 미래 극한강수량 변화 전망",
+    "authors": "염웅선, 박동혁, 권민성, 안재현",
+    "journal": "한국수자원학회 논문집",
+    "year": 2019,
+    "status": "Published"
+  },
+  {
+    "id": 33,
+    "type": "dom-journal",
+    "title": "북한지역 수력발전댐 개발가능지점에 대한 연간가능발생전력량 분석 및 개발 우선순위 평가",
+    "authors": "권민성, 김태웅, 안재현",
+    "journal": "한국수자원학회 논문집",
+    "year": 2018,
+    "status": "Published"
+  },
+  {
+    "id": 34,
+    "type": "dom-journal",
+    "title": "표준강수지수와 강수 부족량을 이용한 이변량 가뭄빈도해석: 한강유역을 중심으로",
+    "authors": "권민성, 성장현, 김태웅, 안재현",
+    "journal": "한국수자원학회 논문집",
+    "year": 2018,
+    "status": "Published"
+  },
+  {
+    "id": 35,
+    "type": "dom-journal",
+    "title": "상수도관망 재난관리 및 복구를 위한 데이터기반 이상탐지 방법론 개발",
+    "authors": "정동휘, 안재현",
+    "journal": "한국수자원학회 논문집",
+    "year": 2018,
+    "status": "Published"
+  },
+  {
+    "id": 36,
+    "type": "dom-journal",
+    "title": "농업용 저수지, 선행토양함수조건 및 Huff 시간분포가 유역의 첨두홍수량에 미치는 영향 분석",
+    "authors": "권민성, 안재현, 전경수, 김태웅",
+    "journal": "한국수자원학회 논문집",
+    "year": 2018,
+    "status": "Published"
+  },
+  {
+    "id": 37,
+    "type": "dom-journal",
+    "title": "기후변화 영향을 고려한 유출변화에 따른 북한 수자원시설 발전량 평가",
+    "authors": "어규, 이찬희, 심우배, 안재현",
+    "journal": "한국수자원학회 논문집",
+    "year": 2018,
+    "status": "Published"
+  },
+  {
+    "id": 38,
+    "type": "dom-journal",
+    "title": "유역 평가 기준 개발을 위한 그린빌딩 평가 시스템의 물관리 관련 항목 비교 연구",
+    "authors": "무하마드 빌랄 이드리스, 이진영, 안재현, 김태웅",
+    "journal": "대한토목학회 논문집",
+    "year": 2018,
+    "status": "Published"
+  },
+  {
+    "id": 39,
+    "type": "dom-journal",
+    "title": "미계측 유역의 홍수피해분석을 위한 자연유량의 홍수지표 기반 확률홍수량",
+    "authors": "채병석, 최시중, 안재현, 김태웅",
+    "journal": "대한토목학회 논문집",
+    "year": 2018,
+    "status": "Published"
+  },
+  {
+    "id": 40,
+    "type": "dom-journal",
+    "title": "유아의 기후변화 대응 지식 및 문제해결 능력",
+    "authors": "정현심, 안재현, 성미영",
+    "journal": "한국콘텐츠학회 논문집",
+    "year": 2018,
+    "status": "Published"
+  },
+  {
+    "id": 41,
+    "type": "dom-journal",
+    "title": "북한의 수력발전가능량 산정 및 평가에 대한 연구",
+    "authors": "박미리, 안재현",
+    "journal": "대한토목학회 논문집",
+    "year": 2018,
+    "status": "Published"
+  },
+  {
+    "id": 42,
+    "type": "dom-journal",
+    "title": "BIM 기술을 활용한 통합방재시스템 구축 및 수공구조물에 대한 활용 방안 연구",
+    "authors": "정창삼, 안정환, 안재현",
+    "journal": "한국방재학회 논문집",
+    "year": 2017,
+    "status": "Published"
+  },
+  {
+    "id": 43,
+    "type": "dom-journal",
+    "title": "점근유출곡선지수법을 이용한 소유역 유출곡선지수 산정 및 최적 초기손실률 결정",
+    "authors": "유지수, 박동혁, 안재현, 김태웅",
+    "journal": "한국수자원학회 논문집",
+    "year": 2017,
+    "status": "Published"
+  },
+  {
+    "id": 44,
+    "type": "dom-journal",
+    "title": "수문학적 조건 등급에 따른 우리나라 산림의 유출곡선지수 재산정",
+    "authors": "박동혁, 유지수, 안재현, 김태웅",
+    "journal": "한국수자원학회 논문집",
+    "year": 2017,
+    "status": "Published"
+  },
+  {
+    "id": 45,
+    "type": "dom-journal",
+    "title": "설계강우-유출 관계 분석법에 의한 확률홍수량의 회귀보정을 통한 미계측 유역의 설계홍수량 산정",
+    "authors": "채병석, 이진영, 안재현, 김태웅",
+    "journal": "한국수자원학회 논문집",
+    "year": 2017,
+    "status": "Published"
+  },
+  {
+    "id": 46,
+    "type": "dom-journal",
+    "title": "자연재해위험개선지구 정비사업 전후의 주민인식 분석",
+    "authors": "김학열, 윤중경, 안재현",
+    "journal": "한국도시행정학회 논문집",
+    "year": 2016,
+    "status": "Published"
+  },
+  {
+    "id": 47,
+    "type": "dom-journal",
+    "title": "유전자 알고리즘과 CN Aligner 공식을 이용한 유출곡선지수 재산정",
+    "authors": "박동혁, 강두선, 안재현, 김태웅",
+    "journal": "한국수자원학회 논문집",
+    "year": 2016,
+    "status": "Published"
+  },
+  {
+    "id": 48,
+    "type": "dom-journal",
+    "title": "유효우량 산정을 위한 NRCS-CN 모형의 초기손실량 산정방법 개선",
+    "authors": "박동혁, 무하마드 아즈말, 안재현, 김태웅",
+    "journal": "한국수자원학회 논문집",
+    "year": 2015,
+    "status": "Published"
+  },
+  {
+    "id": 49,
+    "type": "dom-journal",
+    "title": "유역의 강우-유출 특성을 고려한 NRCS-CN 방법의 선행토양함수조건의 재설정 : 선행5일 강우량을 기준으로",
+    "authors": "유지영, 문건우, 안재현, 김태웅",
+    "journal": "대한토목학회 논문집",
+    "year": 2014,
+    "status": "Published"
+  },
+  {
+    "id": 50,
+    "type": "dom-journal",
+    "title": "NRCS-CN 방법을 이용한 유역평균 유효우량 산정기법의 비교 분석",
+    "authors": "문건우, 유지영, 안재현, 김태웅",
+    "journal": "대한토목학회 논문집",
+    "year": 2014,
+    "status": "Published"
+  },
+  {
+    "id": 51,
+    "type": "dom-journal",
+    "title": "미래 기후․수문 정보에 따른 국내 가뭄의 전망 및 분석",
+    "authors": "손경환, 배덕효, 안재현",
+    "journal": "한국수자원학회 논문집",
+    "year": 2014,
+    "status": "Published"
+  },
+  {
+    "id": 52,
+    "type": "dom-journal",
+    "title": "국내 가뭄관리 기관별 PDSI 산정방법의 표준화 및 평가",
+    "authors": "배덕효, 손경환, 김현경, 이주헌, 이동률, 안재현, 김태웅",
+    "journal": "한국기상학회 논문집",
+    "year": 2013,
+    "status": "Published"
+  },
+  {
+    "id": 53,
+    "type": "dom-journal",
+    "title": "기후와 지형 특성이 수문분할과 식생반응에 미치는 영향",
+    "authors": "박윤경, 최민하, 안재현, 김상단",
+    "journal": "한국수자원학회 논문집",
+    "year": 2013,
+    "status": "Published"
+  },
+  {
+    "id": 54,
+    "type": "dom-journal",
+    "title": "일 단위 SPI와 ROC 분석을 이용한 단기가뭄의 평가",
+    "authors": "유지영, 송호용, 김태웅, 안재현",
+    "journal": "대한토목학회 논문집",
+    "year": 2013,
+    "status": "Published"
+  },
+  {
+    "id": 55,
+    "type": "dom-journal",
+    "title": "자연용수공급지역에서 가뭄상황판단을 위한 실시간가뭄지수",
+    "authors": "안재현",
+    "journal": "한국방재학회 논문집",
+    "year": 2013,
+    "status": "Published"
+  },
+  {
+    "id": 56,
+    "type": "dom-journal",
+    "title": "재해에 대비한 수자원 시스템의 지속가능성 및 복원성에 관한 연구",
+    "authors": "강두선, 김태웅, 안재현",
+    "journal": "한국방재학회 논문집",
+    "year": 2013,
+    "status": "Published"
+  },
+  {
+    "id": 57,
+    "type": "dom-journal",
+    "title": "가뭄심도 분류기준의 개선방안 제시",
+    "authors": "권진주, 안재현, 김태웅",
+    "journal": "한국수자원학회 논문집",
+    "year": 2013,
+    "status": "Published"
+  },
+  {
+    "id": 58,
+    "type": "dom-journal",
+    "title": "유출곡선지수의 선행토양함수조건 선정기준 연구",
+    "authors": "김지상, 안재현",
+    "journal": "한국습지학회 논문집",
+    "year": 2012,
+    "status": "Published"
+  },
+  {
+    "id": 59,
+    "type": "dom-journal",
+    "title": "Copulas 기반의 결합가뭄지수를 이용한 가뭄심도-영향면적-지속기간 곡선의 적용",
+    "authors": "류정수, 안재현, 김상단",
+    "journal": "한국수자원학회 논문집",
+    "year": 2012,
+    "status": "Published"
+  },
+  {
+    "id": 60,
+    "type": "dom-journal",
+    "title": "잔차시계열 분석을 통한 비정상성 강우빈도해석",
+    "authors": "장선우, 서린, 김태웅, 안재현",
+    "journal": "대한토목학회 논문집",
+    "year": 2011,
+    "status": "Published"
+  },
+  {
+    "id": 61,
+    "type": "dom-journal",
+    "title": "생태수문변화에 따른 토양수분의 영향 분석",
+    "authors": "허유미, 최민하, 김현우, 김상단, 안재현",
+    "journal": "한국습지학회 논문집",
+    "year": 2011,
+    "status": "Published"
+  },
+  {
+    "id": 62,
+    "type": "dom-journal",
+    "title": "우리나라 호우특성과 홍수피해와의 상관성 분석",
+    "authors": "박두호, 안재현, 최용준",
+    "journal": "한국습지학회 논문집",
+    "year": 2011,
+    "status": "Published"
+  },
+  {
+    "id": 63,
+    "type": "dom-journal",
+    "title": "문산천의 유사특성 및 장기하상변동 예측",
+    "authors": "이재근, 안재현",
+    "journal": "한국습지학회 논문집",
+    "year": 2011,
+    "status": "Published"
+  },
+  {
+    "id": 64,
+    "type": "dom-journal",
+    "title": "Horton 지수의 재논의를 통한 수문분할의 변동성",
+    "authors": "최대규, 최민하, 안재현, 박무종, 김상단",
+    "journal": "한국습지학회 논문집",
+    "year": 2011,
+    "status": "Published"
+  },
+  {
+    "id": 65,
+    "type": "dom-journal",
+    "title": "우리나라 가상수량 산정방법의 적용성 평가",
+    "authors": "안재현, 이재근, 이승호, 홍일표",
+    "journal": "한국수자원학회 논문집",
+    "year": 2010,
+    "status": "Published"
+  },
+  {
+    "id": 66,
+    "type": "dom-journal",
+    "title": "토양수분 확률밀도함수로 살펴본 가뭄발생에 대한 기후변화의 영향",
+    "authors": "최대규, 안재현, 조덕준, 김상단",
+    "journal": "한국수자원학회 논문집",
+    "year": 2010,
+    "status": "Published"
+  },
+  {
+    "id": 67,
+    "type": "dom-journal",
+    "title": "도시침수 대비 유아 안전교육 프로그램 개발 및 효과 검증",
+    "authors": "안재현, 성미영",
+    "journal": "한국방재학회 논문집",
+    "year": 2010,
+    "status": "Published"
+  },
+  {
+    "id": 68,
+    "type": "dom-journal",
+    "title": "비정상성 강우빈도해석법에 의한 확률강우량의 평가",
+    "authors": "이창환, 안재현, 김태웅",
+    "journal": "한국수자원학회 논문집",
+    "year": 2010,
+    "status": "Published"
+  },
+  {
+    "id": 69,
+    "type": "dom-journal",
+    "title": "빈도별 확률강우량을 초과하는 시간강우사상의 특성 분석",
+    "authors": "오태석, 김은철, 문영일, 안재현",
+    "journal": "대한토목학회 논문집",
+    "year": 2009,
+    "status": "Published"
+  },
+  {
+    "id": 70,
+    "type": "dom-journal",
+    "title": "장기유출모의를 위한 수문시계열 예측모형의 적용성 평가",
+    "authors": "윤선권, 안재현, 김종석, 문영일",
+    "journal": "한국수자원학회 논문집",
+    "year": 2009,
+    "status": "Published"
+  },
+  {
+    "id": 71,
+    "type": "dom-journal",
+    "title": "자료기간에 따른 확률 강우량 변화 특성 분석",
+    "authors": "오태석, 김민석, 문영일, 안재현",
+    "journal": "한국방재학회 논문집",
+    "year": 2009,
+    "status": "Published"
+  },
+  {
+    "id": 72,
+    "type": "dom-journal",
+    "title": "계층화분석기법을 통한 구조물적 홍수방어 최적대안 선정 방안 연구",
+    "authors": "이정호, 전영준, 안재현, 김태웅",
+    "journal": "한국방재학회 논문집",
+    "year": 2009,
+    "status": "Published"
+  },
+  {
+    "id": 73,
+    "type": "dom-journal",
+    "title": "토양수분의 추계학적 거동과 기후변화가 미치는 영향",
+    "authors": "한수희, 안재현, 김상단",
+    "journal": "한국수자원학회 논문집",
+    "year": 2009,
+    "status": "Published"
+  },
+  {
+    "id": 74,
+    "type": "dom-journal",
+    "title": "인공신경망모형과 군집분석을 이용한 교각 세굴심 예측",
+    "authors": "이창환, 안재현, 이주헌, 김태웅",
+    "journal": "대한토목학회 논문집",
+    "year": 2009,
+    "status": "Published"
+  },
+  {
+    "id": 75,
+    "type": "dom-journal",
+    "title": "SMS 모형을 이용한 포천천 유역에서의 장기하상변동 분석",
+    "authors": "최민하, 이승오, 안재현, 윤용남",
+    "journal": "한국방재학회 논문집",
+    "year": 2008,
+    "status": "Published"
+  },
+  {
+    "id": 76,
+    "type": "dom-journal",
+    "title": "우리나라에 발생한 태풍의 시간 강우량 특성에 관한 연구",
+    "authors": "오태석, 문영일, 안재현",
+    "journal": "한국수자원학회 논문집",
+    "year": 2007,
+    "status": "Published"
+  },
+  {
+    "id": 77,
+    "type": "dom-journal",
+    "title": "우리나라 강수량과 한반도 근해의 수온 및 기온의 상관성 분석",
+    "authors": "오태석, 안재현, 문영일, 권현한",
+    "journal": "대한토목학회 논문집",
+    "year": 2007,
+    "status": "Published"
+  },
+  {
+    "id": 78,
+    "type": "dom-journal",
+    "title": "저수지 장기운영을 위한 퇴적토사의 효율적 관리(2) : 저수지 퇴사분포 및 저감방안",
+    "authors": "안재현, 장수형, 윤용남, 최원석",
+    "journal": "한국물환경학회지",
+    "year": 2006,
+    "status": "Published"
+  },
+  {
+    "id": 79,
+    "type": "dom-journal",
+    "title": "저수지 장기운영을 위한 퇴적토사의 효율적 관리(1) : 저수지 퇴사량 산정",
+    "authors": "안재현, 장수형, 윤용남, 최원석",
+    "journal": "한국물환경학회지",
+    "year": 2006,
+    "status": "Published"
+  },
+  {
+    "id": 80,
+    "type": "dom-journal",
+    "title": "저수지 가뭄감시를 위한 물공급능력지수의 개발",
+    "authors": "이동률, 문장원, 이대희, 안재현",
+    "journal": "한국수자원학회 논문집",
+    "year": 2006,
+    "status": "Published"
+  },
+  {
+    "id": 81,
+    "type": "dom-journal",
+    "title": "MIKE SWMM 모형을 이용한 도시유역 유출분석에 관한 연구",
+    "authors": "김종석, 안재현, 문영일, 오태석",
+    "journal": "한국수자원학회 논문집",
+    "year": 2005,
+    "status": "Published"
+  },
+  {
+    "id": 82,
+    "type": "dom-journal",
+    "title": "도시화가 도시지역 강수변화에 미치는 영향 연구",
+    "authors": "오태석, 안재현, 문영일, 김종석",
+    "journal": "한국수자원학회 논문집",
+    "year": 2005,
+    "status": "Published"
+  },
+  {
+    "id": 83,
+    "type": "dom-journal",
+    "title": "댐 건설로 인한 국지 수문기상환경의 변화 추정",
+    "authors": "유철상, 안재현, 강성규, 김기욱, 윤용남",
+    "journal": "환경정책연구",
+    "year": 2005,
+    "status": "Published"
+  },
+  {
+    "id": 84,
+    "type": "dom-journal",
+    "title": "댐 건설에 따른 수문기상학적 영향 범위",
+    "authors": "안재현, 유철상, 김학열, 윤용남",
+    "journal": "한국수자원학회 논문집",
+    "year": 2005,
+    "status": "Published"
+  },
+  {
+    "id": 85,
+    "type": "dom-journal",
+    "title": "포아송과정을 이용한 가뭄의 공간분포 분석",
+    "authors": "유철상, 안재현, 류소라",
+    "journal": "한국수자원학회 논문집",
+    "year": 2004,
+    "status": "Published"
+  },
+  {
+    "id": 86,
+    "type": "dom-journal",
+    "title": "댐 건설에 따른 하류 유황의 변화 분석",
+    "authors": "김태균, 윤용남, 안재현",
+    "journal": "한국수자원학회 논문집",
+    "year": 2002,
+    "status": "Published"
+  },
+  {
+    "id": 87,
+    "type": "dom-journal",
+    "title": "가뭄평가를 위한 가뭄지수의 비교 연구",
+    "authors": "류재희, 이동률, 안재현, 윤용남",
+    "journal": "한국수자원학회 논문집",
+    "year": 2002,
+    "status": "Published"
+  },
+  {
+    "id": 88,
+    "type": "dom-journal",
+    "title": "최적화기법을 이용한 Nash모형과 Diskin모형의 매개변수 추정",
+    "authors": "최민하, 안재현, 김중훈, 윤용남",
+    "journal": "한국도시방재학회 논문집",
+    "year": 2001,
+    "status": "Published"
+  },
+  {
+    "id": 89,
+    "type": "dom-journal",
+    "title": "확률강우량 산정방법의 신뢰도 분석",
+    "authors": "홍창선, 원석연, 안재현, 안원식",
+    "journal": "한국도시방재학회 논문집",
+    "year": 2001,
+    "status": "Published"
+  },
+  {
+    "id": 90,
+    "type": "dom-journal",
+    "title": "지구온난화에 따른 수문환경의 변화와 관련하여 : 2. 물수지모형을 이용한 대청댐 상류유역 수문환경의 변화분석",
+    "authors": "안재현, 윤용남, 유철상",
+    "journal": "한국수자원학회 논문집",
+    "year": 2001,
+    "status": "Published"
+  },
+  {
+    "id": 91,
+    "type": "dom-journal",
+    "title": "지구온난화에 따른 수문환경의 변화와 관련하여 : 1. 국지규모모형을 이용한 한반도 기온의 변화 분석",
+    "authors": "안재현, 윤용남, 이재수",
+    "journal": "한국수자원학회 논문집",
+    "year": 2001,
+    "status": "Published"
+  },
+  {
+    "id": 92,
+    "type": "dom-journal",
+    "title": "GCM 결과를 이용한 지구온난화에 따른 대청댐 유역의 수문환경 변화 분석",
+    "authors": "안재현, 유철상, 윤용남",
+    "journal": "한국수자원학회 논문집",
+    "year": 2001,
+    "status": "Published"
+  },
+  {
+    "id": 93,
+    "type": "dom-journal",
+    "title": "물수지 방정식을 이용한 대청댐 건설에 따른 수문환경의 변화 분석",
+    "authors": "안재현, 유철상, 윤용남",
+    "journal": "한국수자원학회 논문집",
+    "year": 2001,
+    "status": "Published"
+  },
+  {
+    "id": 94,
+    "type": "dom-journal",
+    "title": "월 유출량 예측 변수로서 지하수 함양량의 이용",
+    "authors": "이동률, 윤용남, 안재현",
+    "journal": "한국수자원학회 논문집",
+    "year": 2001,
+    "status": "Published"
+  },
+  {
+    "id": 95,
+    "type": "dom-journal",
+    "title": "자료기간 증가에 따른 확률강우량의 거동특성 분석",
+    "authors": "안재현, 김태웅, 유철상, 윤용남",
+    "journal": "한국수자원학회 논문집",
+    "year": 2000,
+    "status": "Published"
+  },
+  {
+    "id": 96,
+    "type": "dom-journal",
+    "title": "지구온난화에 따른 홍수 및 가뭄 발생빈도의 변화와 관련하여 : 1. 연/월강수량의 변화에 따른 일강수량 분포의 변화분석",
+    "authors": "윤용남, 이재수, 유철상, 안재현",
+    "journal": "한국수자원학회 논문집",
+    "year": 1999,
+    "status": "Published"
+  },
+  {
+    "id": 97,
+    "type": "dom-journal",
+    "title": "지구온난화에 따른 홍수 및 가뭄 발생빈도의 변화와 관련하여 : 2. 지구 온난화에 따른 일 강수량 분포의 변화 추정",
+    "authors": "윤용남, 이재수, 유철상, 안재현",
+    "journal": "한국수자원학회 논문집",
+    "year": 1999,
+    "status": "Published"
+  },
+  {
+    "id": 98,
+    "type": "dom-journal",
+    "title": "엘니뇨/남방진동지수의 비선형성 검출",
+    "authors": "김형수, 안재현, 윤용남, 박무종",
+    "journal": "대한토목학회 논문집",
+    "year": 1999,
+    "status": "Published"
+  },
+  {
+    "id": 99,
+    "type": "dom-journal",
+    "title": "엘니뇨와 우리나라 강수량의 시․공간적 상관관계 분석",
+    "authors": "신현석, 안재현, 윤용남",
+    "journal": "대한토목학회 논문집",
+    "year": 1999,
+    "status": "Published"
+  },
+  {
+    "id": 100,
+    "type": "dom-journal",
+    "title": "댐 건설전후 유역의 장기유출특성변화의 분석 : I. GIS를 이용한 NWS-PC 모형의 매개변수 추정",
+    "authors": "윤용남, 유철상, 안재현, 양인태, 고덕구",
+    "journal": "대한토목학회 논문집",
+    "year": 1998,
+    "status": "Published"
+  },
+  {
+    "id": 101,
+    "type": "dom-journal",
+    "title": "Palmer의 방법을 이용한 가뭄의 분석",
+    "authors": "윤용남, 안재현, 이동률",
+    "journal": "한국수자원학회 논문집",
+    "year": 1997,
+    "status": "Published"
+  },
+  {
+    "id": 102,
+    "type": "dom-journal",
+    "title": "An Experimental Study of Backwater Effects Caused by the Covered Reach of Urban Streams",
+    "authors": "Yoon, Y.N., J.H. Ahn and J.K. Kim",
+    "journal": "Korean Journal of Hydrosciences",
+    "year": 1997,
+    "status": "Published"
+  },
+  {
+    "id": 103,
+    "type": "dom-journal",
+    "title": "비선형 계획법을 이용한 수도권 하수처리장의 최적운영에 관한 연구",
+    "authors": "김중훈, 윤용남, 안재현, 김정환",
+    "journal": "한국수자원학회 논문집",
+    "year": 1996,
+    "status": "Published"
+  },
+  {
+    "id": 104,
+    "type": "dom-journal",
+    "title": "도시하천 복개구간의 교각으로 인한 배수영향의 실험적 연구",
+    "authors": "윤용남, 안재현, 김진관",
+    "journal": "한국수자원학회 논문집",
+    "year": 1996,
     "status": "Published"
   }
 ]
