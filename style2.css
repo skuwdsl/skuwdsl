@@ -340,6 +340,17 @@ ul {
     transform: translateX(-50%) translateY(0);
 }
 
+/* 우측 메뉴 항목의 드롭다운이 화면 오른쪽 밖으로 넘치는 현상 방지 (오른쪽 정렬) */
+.nav-item-dropdown:last-child .dropdown-menu {
+    left: auto;
+    right: 0;
+    transform: translateY(10px);
+}
+
+.nav-item-dropdown:last-child:hover .dropdown-menu {
+    transform: translateY(0);
+}
+
 .dropdown-subitem {
     display: block;
     padding: 10px 18px;
@@ -1248,14 +1259,16 @@ ul {
     }
 }
 
-/* 데스크탑 화면 축소 시 메뉴 깨짐 방지 (1150px 이하) */
-@media (max-width: 1150px) {
-    .nav-menu {
-        gap: 16px;
+/* 화면 너비가 1200px 이하로 좁아지면 데스크톱 메뉴를 햄버거/드로어 메뉴로 전환 */
+@media (max-width: 1200px) {
+    #desktop-nav {
+        display: none !important;
     }
-    .nav-item {
-        font-size: 1.05rem;
+
+    #mobile-menu-toggle {
+        display: block !important;
     }
+
     .logo-img {
         height: 75px;
     }
@@ -1286,14 +1299,6 @@ ul {
 @media (max-width: 992px) {
     .section-padding {
         padding: 80px 0;
-    }
-
-    #desktop-nav {
-        display: none;
-    }
-
-    #mobile-menu-toggle {
-        display: block;
     }
 
     /* 태블릿 로고 텍스트 및 이미지 축소 (겹침 및 오버플로우 방지) */
