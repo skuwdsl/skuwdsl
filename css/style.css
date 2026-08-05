@@ -598,60 +598,56 @@ ul {
 
 /* 연구원 카드 그리드 */
 .member-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 
 .member-card {
-    padding: 24px;
-    display: flex;
-    flex-direction: column;
+    width: 100%;
+    padding: 16px 28px;
+    display: grid;
+    grid-template-columns: 110px 160px 120px auto;
     align-items: center;
-    text-align: center;
-}
-
-.member-avatar {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 20px;
-    border: 2px solid var(--border-glass);
+    text-align: left;
+    gap: 24px;
+    border-left: 3px solid var(--primary);
 }
 
 .member-card h4 {
-    font-size: 1.25rem;
+    font-size: 1.15rem;
     font-weight: 700;
+    margin: 0;
 }
 
 .member-card .eng-name {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     color: var(--text-secondary);
-    margin-bottom: 4px;
+    margin: 0;
 }
 
 .member-card .position {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     color: var(--primary);
-    margin-bottom: 16px;
-    font-weight: 500;
+    margin: 0;
+    font-weight: 600;
+    white-space: nowrap;
 }
 
 .member-card .company {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     color: var(--primary);
-    margin-bottom: 8px;
+    margin: 0;
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 4px;
+    gap: 6px;
 }
 
 .member-card .email {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     color: var(--text-muted);
-    margin-bottom: 16px;
+    margin: 0;
+    white-space: nowrap;
 }
 
 .member-card .interests {
@@ -939,35 +935,40 @@ ul {
 }
 
 .alumni-card {
-    padding: 24px;
-    display: flex;
-    flex-direction: column;
+    padding: 16px 28px;
+    display: grid;
+    grid-template-columns: 110px 240px auto;
+    align-items: center;
+    text-align: left;
+    gap: 24px;
     border-left: 3px solid var(--primary);
 }
 
 .alumni-card h4 {
     font-size: 1.15rem;
     font-weight: 700;
-    margin-bottom: 2px;
+    margin: 0;
 }
 
 .alumni-card .eng-name {
-    font-size: 0.85rem;
+    font-size: 0.95rem;
     color: var(--text-secondary);
-    margin-bottom: 4px;
+    margin: 0;
 }
 
 .alumni-card .position {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     color: var(--text-muted);
-    margin-bottom: 12px;
+    margin: 0;
+    text-align: left;
+    white-space: nowrap;
 }
 
 .alumni-card .company {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     color: var(--primary);
     font-weight: 600;
-    margin-bottom: 8px;
+    margin: 0;
     display: flex;
     align-items: center;
     gap: 6px;
@@ -977,6 +978,42 @@ ul {
     font-size: 0.8rem;
     color: var(--text-muted);
     word-break: break-all;
+}
+
+/* Publication 필터 버튼 스타일 */
+.publication-filter-buttons {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 28px;
+    flex-wrap: wrap;
+}
+
+.pub-filter-btn {
+    padding: 10px 22px;
+    border-radius: 30px;
+    border: 1px solid rgba(0, 102, 204, 0.2);
+    background: rgba(255, 255, 255, 0.8);
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    backdrop-filter: blur(8px);
+}
+
+.pub-filter-btn:hover {
+    background: rgba(0, 102, 204, 0.1);
+    color: var(--primary);
+    border-color: var(--primary);
+    transform: translateY(-2px);
+}
+
+.pub-filter-btn.active {
+    background: var(--primary);
+    color: #ffffff;
+    border-color: var(--primary);
+    box-shadow: 0 4px 14px rgba(0, 102, 204, 0.35);
+    transform: translateY(-1px);
 }
 
 /* 11-3. 주요 운영실적 스타일 (Projects Section) */
