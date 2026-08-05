@@ -67,9 +67,20 @@ function initNavigation() {
     overlay.addEventListener('click', closeDrawer);
 
     // 모바일 드로어 내부 링크 클릭 시 자동 닫힘
-    const mobileLinks = document.querySelectorAll('.mobile-nav-item');
+    const mobileLinks = document.querySelectorAll('.mobile-nav-item, .mobile-dropdown-subitem');
     mobileLinks.forEach(link => {
-        link.addEventListener('click', closeDrawer);
+        link.addEventListener('click', (e) => {
+            // 서브메뉴가 있는 메인 아이템을 모바일에서 클릭했을 때 토글 동작 지원
+            const parentDropdown = link.closest('.mobile-nav-item-dropdown');
+            if (parentDropdown && link.classList.contains('mobile-nav-item')) {
+                // 서브메뉴가 접혀있을 땐 토글 처리
+                if (!parentDropdown.classList.contains('active')) {
+                    document.querySelectorAll('.mobile-nav-item-dropdown').forEach(d => d.classList.remove('active'));
+                    parentDropdown.classList.add('active');
+                }
+            }
+            closeDrawer();
+        });
     });
 }
 
@@ -81,7 +92,8 @@ async function loadAllData() {
         await Promise.all([
             loadMembers(),
             loadPublications(),
-            loadNews()
+            loadNews(),
+            loadTeaching()
         ]);
         // 동적 렌더링 후 생성된 Lucide 아이콘 활성화
         if (window.lucide) {
@@ -101,7 +113,7 @@ async function loadMembers() {
     const alumniContainer = document.getElementById('alumni-container');
 
     try {
-        const response = await fetch('data/members.json');
+        const response = await fetch('data/members.json?v=' + Date.now());
         const members = await response.json();
 
         let profHtml = '';
@@ -112,15 +124,43 @@ async function loadMembers() {
             if (member.role === 'professor') {
                 const profileImg = member.image || 'images/logo.png';
                 
+                // 학력 정보 리스트 HTML 구성
+                let educationHtml = '';
+                if (member.educations && member.educations.length > 0) {
+                    const educationItems = member.educations.map(edu => `<li style="margin-bottom: 6px;">- ${edu}</li>`).join('');
+                    educationHtml = `
+                        <div class="professor-education" style="margin-bottom: 28px;">
+                            <h4 style="font-family: var(--font-heading); font-size: 1.3rem; font-weight: 700; margin-bottom: 12px; color: var(--text-primary); border-left: 3px solid var(--primary); padding-left: 10px;">학력</h4>
+                            <ul class="education-list" style="padding-left: 8px; color: var(--text-primary); font-size: 1.05rem; line-height: 1.8; list-style: none;">
+                                ${educationItems}
+                            </ul>
+                        </div>
+                    `;
+                }
+
                 // 경력 정보 리스트 HTML 구성
                 let careerHtml = '';
                 if (member.careers && member.careers.length > 0) {
-                    const careerItems = member.careers.map(career => `<li>- ${career}</li>`).join('');
+                    const careerItems = member.careers.map(career => `<li style="margin-bottom: 6px;">- ${career}</li>`).join('');
                     careerHtml = `
-                        <div class="professor-career" style="margin-bottom: 24px;">
-                            <h4 style="font-family: var(--font-heading); font-size: 1.1rem; margin-bottom: 8px;">주요 경력</h4>
-                            <ul class="career-list" style="padding-left: 0; color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; list-style: none;">
+                        <div class="professor-career" style="margin-bottom: 28px;">
+                            <h4 style="font-family: var(--font-heading); font-size: 1.3rem; font-weight: 700; margin-bottom: 12px; color: var(--text-primary); border-left: 3px solid var(--primary); padding-left: 10px;">주요 경력</h4>
+                            <ul class="career-list" style="padding-left: 8px; color: var(--text-primary); font-size: 1.05rem; line-height: 1.8; list-style: none;">
                                 ${careerItems}
+                            </ul>
+                        </div>
+                    `;
+                }
+
+                // 수상 정보 리스트 HTML 구성
+                let awardHtml = '';
+                if (member.awards && member.awards.length > 0) {
+                    const awardItems = member.awards.map(award => `<li style="margin-bottom: 6px;">- ${award}</li>`).join('');
+                    awardHtml = `
+                        <div class="professor-award" style="margin-bottom: 28px;">
+                            <h4 style="font-family: var(--font-heading); font-size: 1.3rem; font-weight: 700; margin-bottom: 12px; color: var(--text-primary); border-left: 3px solid var(--primary); padding-left: 10px;">수상</h4>
+                            <ul class="award-list" style="padding-left: 8px; color: var(--text-primary); font-size: 1.05rem; line-height: 1.8; list-style: none;">
+                                ${awardItems}
                             </ul>
                         </div>
                     `;
@@ -128,12 +168,11 @@ async function loadMembers() {
 
                 profHtml = `
                     <div class="professor-card glass" id="member-prof-${member.id}">
-                        <img src="${profileImg}" alt="${member.nameKo}" class="professor-image" onerror="this.src='images/default_avatar.png'">
                         <div class="professor-info">
                             <h3>${member.nameKo}</h3>
                             <div class="eng-name">${member.nameEn}</div>
                             <span class="position">${member.positionKo}</span>
-                            <div class="professor-meta">
+                            <div class="professor-meta" style="margin-bottom: 24px;">
                                 <div class="meta-item">
                                     <i data-lucide="mail"></i>
                                     <span>${member.email}</span>
@@ -143,21 +182,28 @@ async function loadMembers() {
                                     <span>${member.office}</span>
                                 </div>
                             </div>
+                            ${educationHtml}
                             ${careerHtml}
+                            ${awardHtml}
                         </div>
                     </div>
                 `;
             } else if (member.role === 'alumni') {
-                // 졸업생 정보는 사진/관심분야 없이 간략하게 텍스트 위주로 렌더링
+                const certText = member['자격'] ? ` (${member['자격']})` : '';
+                const alumniCompany = member.company ? `
+                    <div class="company">
+                        <i data-lucide="briefcase" style="width: 16px; height: 16px;"></i>
+                        <span>${member.company}${certText}</span>
+                    </div>
+                ` : '<div class="company"></div>';
+
+                const cleanPositionKo = member.positionKo ? member.positionKo.replace(/\s*\(\d{4}\s*졸업\)/g, '') : '';
+
                 alumniHtml += `
                     <div class="alumni-card glass" id="member-alumni-${member.id}">
                         <h4>${member.nameKo}</h4>
-                        <div class="eng-name">${member.nameEn}</div>
-                        <div class="position">${member.positionKo}</div>
-                        <div class="company">
-                            <i data-lucide="briefcase" style="width: 16px; height: 16px;"></i>
-                            <span>${member.company}</span>
-                        </div>
+                        ${alumniCompany}
+                        <div class="position">${cleanPositionKo}</div>
                     </div>
                 `;
             } else {
@@ -165,27 +211,23 @@ async function loadMembers() {
                 const tags = researchInterests.map(interest => `<span class="tag">${interest}</span>`).join('');
                 const profileImg = member.image || 'images/logo.png';
                 
-                let companyHtml = '';
-                if (member.company) {
-                    companyHtml = `
-                        <div class="company">
-                            <i data-lucide="briefcase" style="width: 14px; height: 14px;"></i>
-                            <span>${member.company}</span>
-                        </div>
-                    `;
-                }
+                const companyHtml = member.company ? `
+                    <div class="company">
+                        <i data-lucide="briefcase" style="width: 14px; height: 14px;"></i>
+                        <span>${member.company}</span>
+                    </div>
+                ` : '<div class="company"></div>';
+
+                const emailHtml = member.email ? `
+                    <div class="email">${member.email}</div>
+                ` : '<div class="email"></div>';
 
                 studentHtml += `
                     <div class="member-card glass" id="member-student-${member.id}">
-                        <img src="${profileImg}" alt="${member.nameKo}" class="member-avatar" onerror="this.src='images/default_avatar.png'">
                         <h4>${member.nameKo}</h4>
                         <div class="eng-name">${member.nameEn}</div>
                         <div class="position">${member.positionKo}</div>
-                        ${companyHtml}
-                        <div class="email">${member.email}</div>
-                        <!-- <div class="interests">
-                            ${tags}
-                        </div> -->
+                        ${emailHtml}
                     </div>
                 `;
             }
@@ -204,136 +246,103 @@ async function loadMembers() {
 }
 
 /**
- * 연구 실적 데이터 로드 및 렌더링 (필터 기능 포함)
+ * 연구 실적 데이터 로드 및 렌더링 (저역서, 국제학술지, 국내학술지 카테고리별 분리)
  */
-let allPublications = []; // 필터링을 위해 전역 변수로 관리
-let allProjects = []; // 프로젝트 필터링을 위해 전역 변수로 관리
-
 async function loadPublications() {
-    const pubListContainer = document.getElementById('pub-list-container');
-    const filterButtons = document.querySelectorAll('.filter-btn');
+    const booksContainer = document.getElementById('pub-books-container');
+    const intJournalContainer = document.getElementById('pub-int-container');
+    const domJournalContainer = document.getElementById('pub-dom-container');
+    const projectListContainer = document.getElementById('project-list-container');
 
     try {
         // 논문 데이터와 프로젝트 데이터를 함께 로드
         const [pubResponse, projResponse] = await Promise.all([
-            fetch('data/publications.json'),
-            fetch('data/projects.json')
+            fetch('data/publications.json?v=' + Date.now()),
+            fetch('data/projects.json?v=' + Date.now())
         ]);
         
-        allPublications = await pubResponse.json();
-        allProjects = await projResponse.json();
+        const publications = await pubResponse.json();
+        const projects = await projResponse.json();
 
-        // 초기 로드 시 전체 데이터 렌더링
-        renderPublications('all');
+        // 1. 카테고리별 분리 렌더링
+        renderPublicationGroup(publications, 'book', booksContainer);
+        renderPublicationGroup(publications, 'int-journal', intJournalContainer);
+        renderPublicationGroup(publications, 'dom-journal', domJournalContainer);
 
-        // 필터 버튼 클릭 이벤트 바인딩
-        filterButtons.forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                filterButtons.forEach(b => b.classList.remove('active'));
-                e.target.classList.add('active');
-                
-                const filterValue = e.target.getAttribute('data-filter');
-                renderPublications(filterValue);
-            });
-        });
-
-        // 드롭다운 하위 메뉴 아이템 클릭 이벤트 바인딩
-        const dropdownItems = [
-            { id: 'dropdown-pub-all', filter: 'all' },
-            { id: 'dropdown-pub-publications', filter: 'publications' },
-            { id: 'dropdown-pub-project', filter: 'project' }
-        ];
-
-        dropdownItems.forEach(item => {
-            const element = document.getElementById(item.id);
-            if (element) {
-                element.addEventListener('click', () => {
-                    filterButtons.forEach(btn => {
-                        btn.classList.remove('active');
-                        if (btn.getAttribute('data-filter') === item.filter) {
-                            btn.classList.add('active');
-                        }
-                    });
-                    renderPublications(item.filter);
-                });
-            }
-        });
+        // 2. 프로젝트 목록 렌더링
+        renderProjectList(projects, projectListContainer);
 
     } catch (error) {
-        pubListContainer.innerHTML = '<p class="error-msg">실적 및 프로젝트 데이터를 가져오는 데 실패했습니다.</p>';
+        if (booksContainer) booksContainer.innerHTML = '<p class="error-msg">실적 데이터를 가져오는 데 실패했습니다.</p>';
+        if (intJournalContainer) intJournalContainer.innerHTML = '<p class="error-msg">실적 데이터를 가져오는 데 실패했습니다.</p>';
+        if (domJournalContainer) domJournalContainer.innerHTML = '<p class="error-msg">실적 데이터를 가져오는 데 실패했습니다.</p>';
+        if (projectListContainer) projectListContainer.innerHTML = '<p class="error-msg">프로젝트 데이터를 가져오는 데 실패했습니다.</p>';
         throw error;
     }
 }
 
-function renderPublications(filter) {
-    const pubListContainer = document.getElementById('pub-list-container');
+function renderPublicationGroup(publications, type, container) {
+    if (!container) return;
     
-    // 1. 프로젝트 필터인 경우 테이블 형식으로 렌더링
-    if (filter === 'project') {
-        pubListContainer.innerHTML = generateProjectTableHtml(allProjects);
-        if (window.lucide) {
-            window.lucide.createIcons();
-        }
+    const items = publications.filter(pub => pub.type === type);
+    const sortedItems = [...items].sort((a, b) => (b.year - a.year) || (a.id - b.id));
+
+    if (sortedItems.length === 0) {
+        container.innerHTML = '<p class="no-data">등록된 연구 성과가 없습니다.</p>';
         return;
     }
 
-    // 2. 논문 실적 정렬 및 필터링
-    const sortedPubs = [...allPublications].sort((a, b) => a.id - b.id);
-    const filteredPubs = (filter === 'all' || filter === 'publications')
-        ? sortedPubs 
-        : sortedPubs.filter(pub => pub.type === filter);
-
-    let pubHtml = '';
-    if (filteredPubs.length === 0) {
-        pubHtml = '<p class="no-data">해당 카테고리의 연구 성과가 없습니다.</p>';
-    } else {
-        pubHtml = filteredPubs.map(pub => {
-            let badgeClass = 'conference';
-            let badgeText = 'Conference';
-            if (pub.type === 'journal') {
-                badgeClass = 'journal';
-                badgeText = 'Journal';
-            } else if (pub.type === 'book') {
-                badgeClass = 'book';
-                badgeText = 'Book';
-            }
-            
-            let linkHtml = '';
-            if (pub.doi) {
-                linkHtml = `
-                    <a href="${pub.doi}" target="_blank" class="pub-link">
-                        Publisher Site <i data-lucide="external-link" style="width: 14px; height: 14px;"></i>
-                    </a>
-                `;
-            }
-
-            const journalOrPublisher = pub.journal || pub.publisher || '';
-
-            return `
-                <div class="pub-item glass" id="pub-${pub.id}">
-                    <span class="pub-badge ${badgeClass}">${badgeText} (${pub.year})</span>
-                    <div class="pub-details">
-                        <h4 class="pub-title">${pub.title}</h4>
-                        <div class="pub-authors">${pub.authors}</div>
-                        <div class="pub-journal">${journalOrPublisher}</div>
-                        ${linkHtml}
-                    </div>
-                </div>
+    const rows = sortedItems.map((pub, idx) => {
+        let linkHtml = '';
+        if (pub.doi) {
+            linkHtml = `
+                <a href="${pub.doi}" target="_blank" class="pub-link" style="margin-left: 8px; display: inline-flex; align-items: center;">
+                    <i data-lucide="external-link" style="width: 14px; height: 14px;"></i>
+                </a>
             `;
-        }).join('');
-    }
+        }
 
-    // 3. '전체(All)' 필터일 경우 하단에 프로젝트 테이블 및 상단에 Publications 타이틀도 함께 렌더링
-    if (filter === 'all') {
-        const publicationsHeaderHtml = `<h3 class="group-title" style="margin-top: 0; margin-bottom: 24px;">Publications</h3>`;
-        const projectSectionHtml = `
-            <h3 class="group-title" style="margin-top: 60px; margin-bottom: 24px;">Research Projects</h3>
-            ${generateProjectTableHtml(allProjects)}
+        const journalOrPublisher = pub.journal || pub.publisher || '';
+
+        return `
+            <tr>
+                <td style="text-align: center; font-weight: 600; color: var(--text-muted);">${idx + 1}</td>
+                <td class="project-title">
+                    <div style="font-weight: 600; color: var(--text-primary); font-size: 0.98rem; line-height: 1.5;">${pub.title}${linkHtml}</div>
+                    <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 4px;">${pub.authors}</div>
+                </td>
+                <td style="font-size: 0.9rem; color: var(--text-secondary);">${journalOrPublisher}</td>
+                <td style="text-align: center; font-weight: 600; font-size: 0.9rem; color: var(--text-secondary);">${pub.year}</td>
+            </tr>
         `;
-        pubListContainer.innerHTML = publicationsHeaderHtml + pubHtml + projectSectionHtml;
-    } else {
-        pubListContainer.innerHTML = pubHtml;
+    }).join('');
+
+    container.innerHTML = `
+        <div class="project-table-container" style="margin-top: 16px;">
+            <table class="project-table">
+                <thead>
+                    <tr>
+                        <th style="width: 60px; text-align: center;">No.</th>
+                        <th>제목 및 저자</th>
+                        <th style="width: 220px;">출판사</th>
+                        <th style="width: 100px; text-align: center;">연도</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    ${rows}
+                </tbody>
+            </table>
+        </div>
+    `;
+
+    if (window.lucide) {
+        window.lucide.createIcons();
     }
+}
+
+function renderProjectList(projects, container) {
+    if (!container) return;
+    container.innerHTML = generateProjectTableHtml(projects);
     
     // 동적 생성된 아이콘 렌더링
     if (window.lucide) {
@@ -350,17 +359,19 @@ function generateProjectTableHtml(projects) {
     }
 
     const rows = projects.map(proj => {
-        const roleClass = proj.role === '연구책임' ? 'lead' : 'member';
+        const contentHtml = proj.content ? `
+            <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 4px;">${proj.content}</div>
+        ` : '';
+
         return `
             <tr>
                 <td>${proj.id}</td>
                 <td class="project-title">
                     ${proj.title}
-                    <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 4px;">${proj.content}</div>
+                    ${contentHtml}
                 </td>
                 <td>${proj.period}</td>
                 <td>${proj.agency}</td>
-                <td><span class="project-role-badge ${roleClass}">${proj.role}</span></td>
             </tr>
         `;
     }).join('');
@@ -374,7 +385,6 @@ function generateProjectTableHtml(projects) {
                         <th>연구과제명</th>
                         <th style="width: 180px;">연구기간</th>
                         <th style="width: 180px;">지원기관</th>
-                        <th style="width: 120px;">역할</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -393,7 +403,7 @@ async function loadNews() {
     if (!newsContainer) return;
 
     try {
-        const response = await fetch('data/news.json');
+        const response = await fetch('data/news.json?v=' + Date.now());
         const newsList = await response.json();
 
         if (newsList.length === 0) {
@@ -426,4 +436,53 @@ async function loadNews() {
         newsContainer.innerHTML = '<p class="error-msg">소식 데이터를 가져오는 데 실패했습니다.</p>';
         throw error;
     }
+}
+
+/**
+ * 강의 정보 데이터 로드 및 렌더링 (학부 및 대학원 중제목 분리)
+ */
+async function loadTeaching() {
+    const undergradContainer = document.getElementById('teaching-undergrad-container');
+    const gradContainer = document.getElementById('teaching-grad-container');
+
+    if (!undergradContainer && !gradContainer) return;
+
+    try {
+        const response = await fetch('data/teaching.json?v=' + Date.now());
+        const teachingList = await response.json();
+
+        const undergradData = teachingList.find(item => item.category.includes('Undergraduate'));
+        const gradData = teachingList.find(item => item.category.includes('Graduate'));
+
+        renderTeachingItems(undergradData ? undergradData.courses : [], undergradContainer);
+        renderTeachingItems(gradData ? gradData.courses : [], gradContainer);
+
+    } catch (error) {
+        if (undergradContainer) undergradContainer.innerHTML = '<p class="error-msg">강의 데이터를 가져오는 데 실패했습니다.</p>';
+        if (gradContainer) gradContainer.innerHTML = '<p class="error-msg">강의 데이터를 가져오는 데 실패했습니다.</p>';
+    }
+}
+
+function renderTeachingItems(courses, container) {
+    if (!container) return;
+    if (!courses || courses.length === 0) {
+        container.innerHTML = '<p class="no-data">등록된 강의 정보가 없습니다.</p>';
+        return;
+    }
+
+    container.innerHTML = `
+        <div class="teaching-list" style="display: flex; flex-direction: column; gap: 16px;">
+            ${courses.map(course => {
+                const parts = course.split(',');
+                const eng = parts[0] ? parts[0].trim() : course;
+                const kor = parts[1] ? parts[1].trim() : '';
+                return `
+                    <div class="teaching-card glass" style="padding: 16px 28px; border-left: 3px solid var(--primary); display: flex; align-items: center; justify-content: flex-start; gap: 24px;">
+                        <div style="font-weight: 700; font-size: 1.1rem; color: var(--text-primary); min-width: 280px;">${eng}</div>
+                        ${kor ? `<div style="font-size: 0.95rem; color: var(--text-muted);">${kor}</div>` : ''}
+                    </div>
+                `;
+            }).join('')}
+        </div>
+    `;
 }
