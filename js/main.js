@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. 초기화 및 이벤트 리스너 등록
     initNavigation();
     loadAllData();
+    initVisitorCounter();
 });
 
 /**
@@ -166,22 +167,21 @@ async function loadMembers() {
                     `;
                 }
 
+                const profPositionHtml = member.positionKo ? `<span class="position">${member.positionKo}</span>` : '';
+                const profEmailHtml = member.email ? `<div class="meta-item"><i data-lucide="mail"></i><span>${member.email}</span></div>` : '';
+                const profOfficeHtml = member.office ? `<div class="meta-item"><i data-lucide="building"></i><span>${member.office}</span></div>` : '';
+                const profMetaHtml = (profEmailHtml || profOfficeHtml) ? `<div class="professor-meta" style="margin-bottom: 24px;">${profEmailHtml}${profOfficeHtml}</div>` : '';
+                const profEngNameHtml = member.nameEn ? `<span class="eng-name">${member.nameEn}</span>` : '';
+
                 profHtml = `
                     <div class="professor-card glass" id="member-prof-${member.id}">
                         <div class="professor-info">
-                            <h3>${member.nameKo}</h3>
-                            <div class="eng-name">${member.nameEn}</div>
-                            <span class="position">${member.positionKo}</span>
-                            <div class="professor-meta" style="margin-bottom: 24px;">
-                                <div class="meta-item">
-                                    <i data-lucide="mail"></i>
-                                    <span>${member.email}</span>
-                                </div>
-                                <div class="meta-item">
-                                    <i data-lucide="building"></i>
-                                    <span>${member.office}</span>
-                                </div>
+                            <div class="professor-name-group">
+                                <h3>${member.nameKo || ''}</h3>
+                                ${profEngNameHtml}
                             </div>
+                            ${profPositionHtml}
+                            ${profMetaHtml}
                             ${educationHtml}
                             ${careerHtml}
                             ${awardHtml}
@@ -197,13 +197,10 @@ async function loadMembers() {
                     </div>
                 ` : '<div class="company"></div>';
 
-                const cleanPositionKo = member.positionKo ? member.positionKo.replace(/\s*\(\d{4}\s*졸업\)/g, '') : '';
-
                 alumniHtml += `
                     <div class="alumni-card glass" id="member-alumni-${member.id}">
-                        <h4>${member.nameKo}</h4>
+                        <h4>${member.nameKo || ''}</h4>
                         ${alumniCompany}
-                        <div class="position">${cleanPositionKo}</div>
                     </div>
                 `;
             } else {
@@ -222,11 +219,14 @@ async function loadMembers() {
                     <div class="email">${member.email}</div>
                 ` : '<div class="email"></div>';
 
+                const studentEngNameHtml = member.nameEn ? `<div class="eng-name">${member.nameEn}</div>` : '';
+                const studentPositionHtml = member.positionKo ? `<div class="position">${member.positionKo}</div>` : '';
+
                 studentHtml += `
                     <div class="member-card glass" id="member-student-${member.id}">
-                        <h4>${member.nameKo}</h4>
-                        <div class="eng-name">${member.nameEn}</div>
-                        <div class="position">${member.positionKo}</div>
+                        <h4>${member.nameKo || ''}</h4>
+                        ${studentEngNameHtml}
+                        ${studentPositionHtml}
                         ${emailHtml}
                     </div>
                 `;
@@ -292,6 +292,9 @@ function renderPublicationGroup(publications, type, container) {
         return;
     }
 
+    const titleHeader = type === 'book' ? '출판명' : '제목 및 저자';
+    const publisherHeader = type === 'book' ? '출판사' : '학술지명';
+
     const rows = sortedItems.map((pub, idx) => {
         let linkHtml = '';
         if (pub.doi) {
@@ -303,13 +306,14 @@ function renderPublicationGroup(publications, type, container) {
         }
 
         const journalOrPublisher = pub.journal || pub.publisher || '';
+        const authorsHtml = (type !== 'book' && pub.authors) ? `<div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 4px;">${pub.authors}</div>` : '';
 
         return `
             <tr>
                 <td style="text-align: center; font-weight: 600; color: var(--text-muted);">${idx + 1}</td>
                 <td class="project-title">
                     <div style="font-weight: 600; color: var(--text-primary); font-size: 0.98rem; line-height: 1.5;">${pub.title}${linkHtml}</div>
-                    <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 4px;">${pub.authors}</div>
+                    ${authorsHtml}
                 </td>
                 <td style="font-size: 0.9rem; color: var(--text-secondary);">${journalOrPublisher}</td>
                 <td style="text-align: center; font-weight: 600; font-size: 0.9rem; color: var(--text-secondary);">${pub.year}</td>
@@ -323,8 +327,8 @@ function renderPublicationGroup(publications, type, container) {
                 <thead>
                     <tr>
                         <th style="width: 60px; text-align: center;">No.</th>
-                        <th>제목 및 저자</th>
-                        <th style="width: 220px;">출판사</th>
+                        <th>${titleHeader}</th>
+                        <th style="width: 220px;">${publisherHeader}</th>
                         <th style="width: 100px; text-align: center;">연도</th>
                     </tr>
                 </thead>
@@ -485,4 +489,59 @@ function renderTeachingItems(courses, container) {
             }).join('')}
         </div>
     `;
+}
+
+/**
+ * 오늘 및 누적 방문자 수 카운터 초기화 및 애니메이션
+ */
+function initVisitorCounter() {
+    const todayElem = document.getElementById('today-count');
+    if (!todayElem) return;
+
+    // 오늘 날짜 구하기 (YYYY-MM-DD)
+    const now = new Date();
+    const todayKey = `wdsl_visit_date_${now.getFullYear()}-${now.getMonth() + 1}-${now.getDate()}`;
+    const lastVisitDate = localStorage.getItem('wdsl_last_date');
+
+    let todayVisits = parseInt(localStorage.getItem(todayKey) || '14', 10);
+
+    // 날짜가 변경되었으면 오늘 방문자 수 리셋
+    if (lastVisitDate !== todayKey) {
+        localStorage.setItem('wdsl_last_date', todayKey);
+        todayVisits = 1;
+        localStorage.setItem(todayKey, todayVisits);
+    } else {
+        // 세션에 방문 기록이 없으면 (새 방문 세션) 카운트 1 증가
+        if (!sessionStorage.getItem('wdsl_visited_session')) {
+            todayVisits += 1;
+            localStorage.setItem(todayKey, todayVisits);
+            sessionStorage.setItem('wdsl_visited_session', 'true');
+        }
+    }
+
+    // 숫자 카운트업 애니메이션 적용
+    animateCount(todayElem, todayVisits);
+}
+
+function animateCount(elem, target) {
+    let start = 0;
+    const duration = 1200;
+    const startTime = performance.now();
+
+    function update(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const easeProgress = 1 - Math.pow(1 - progress, 3);
+        const currentCount = Math.floor(easeProgress * target);
+        
+        elem.textContent = currentCount.toLocaleString();
+
+        if (progress < 1) {
+            requestAnimationFrame(update);
+        } else {
+            elem.textContent = target.toLocaleString();
+        }
+    }
+
+    requestAnimationFrame(update);
 }
