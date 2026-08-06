@@ -496,44 +496,72 @@ function renderTeachingItems(courses, container) {
  */
 async function initVisitorCounter() {
     const todayElem = document.getElementById('today-count');
-    if (!todayElem) return;
+    const totalElem = document.getElementById('total-count');
+    if (!todayElem && !totalElem) return;
 
     // 오늘 날짜 고유 키 구하기 (YYYYMMDD)
     const now = new Date();
     const todayStr = `${now.getFullYear()}${String(now.getMonth() + 1).padStart(2, '0')}${String(now.getDate()).padStart(2, '0')}`;
-    const namespace = 'sku_wdsl_lab_official';
-    const key = `today_visit_${todayStr}`;
+    const namespace = 'sku_wdsl_lab_official_fresh_v1';
+    const todayKey = `fresh_today_${todayStr}`;
+    const totalKey = `fresh_total_all`;
 
     // 세션당 1회만 카운트 증가 (중복 새로고침 무한 증가 방지)
-    const hasVisitedSession = sessionStorage.getItem('wdsl_global_visited_session');
+    const hasVisitedSession = sessionStorage.getItem('wdsl_global_visited_session_fresh');
     const action = hasVisitedSession ? 'get' : 'up';
 
     try {
-        // 글로벌 실시간 통합 카운터 API 호출
-        const apiUrl = `https://api.counterapi.dev/v1/${namespace}/${key}/${action}`;
-        const response = await fetch(apiUrl);
-        const data = await response.json();
+        // 글로벌 실시간 통합 카운터 API 호출 (Today & Total)
+        const [todayRes, totalRes] = await Promise.all([
+            fetch(`https://api.counterapi.dev/v1/${namespace}/${todayKey}/${action}`),
+            fetch(`https://api.counterapi.dev/v1/${namespace}/${totalKey}/${action}`)
+        ]);
+        
+        const todayData = await todayRes.json();
+        const totalData = await totalRes.json();
 
-        if (data && typeof data.count === 'number') {
-            if (!hasVisitedSession) {
-                sessionStorage.setItem('wdsl_global_visited_session', 'true');
-            }
-            animateCount(todayElem, data.count);
-            localStorage.setItem('wdsl_today_cached_count', data.count);
-            return;
+        let todayVal = (todayData && typeof todayData.count === 'number') ? todayData.count : parseInt(localStorage.getItem('wdsl_today_cached_count') || '1', 10);
+        let totalVal = (totalData && typeof totalData.count === 'number') ? totalData.count : parseInt(localStorage.getItem('wdsl_total_cached_count') || '1', 10);
+
+        // 논리적 보정: Total(누적)은 항상 Today(오늘) 이상이어야 함
+        if (totalVal < todayVal) {
+            totalVal = todayVal;
         }
+
+        if (!hasVisitedSession) {
+            sessionStorage.setItem('wdsl_global_visited_session_fresh', 'true');
+        }
+
+        localStorage.setItem('wdsl_today_cached_count', todayVal);
+        localStorage.setItem('wdsl_total_cached_count', totalVal);
+
+        if (todayElem) animateCount(todayElem, todayVal);
+        if (totalElem) animateCount(totalElem, totalVal);
+        return;
     } catch (err) {
         console.warn('통합 카운터 API 연동 대기/백업 모드 전환:', err);
     }
 
     // 네트워크 예외 시 폴백(Fallback) 안전 카운터 작동
     let todayVisits = parseInt(localStorage.getItem('wdsl_today_cached_count') || '1', 10);
+    let totalVisits = parseInt(localStorage.getItem('wdsl_total_cached_count') || '1', 10);
     if (!hasVisitedSession) {
         todayVisits += 1;
-        localStorage.setItem('wdsl_today_cached_count', todayVisits);
-        sessionStorage.setItem('wdsl_global_visited_session', 'true');
+        totalVisits += 1;
     }
-    animateCount(todayElem, todayVisits);
+
+    if (totalVisits < todayVisits) {
+        totalVisits = todayVisits;
+    }
+
+    localStorage.setItem('wdsl_today_cached_count', todayVisits);
+    localStorage.setItem('wdsl_total_cached_count', totalVisits);
+    sessionStorage.setItem('wdsl_global_visited_session_fresh', 'true');
+
+    if (todayElem) animateCount(todayElem, todayVisits);
+    if (totalElem) animateCount(totalElem, totalVisits);
+    if (todayElem) animateCount(todayElem, todayVisits);
+    if (totalElem) animateCount(totalElem, totalVisits);
 }
 
 function animateCount(elem, target) {
