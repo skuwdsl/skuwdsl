@@ -492,34 +492,47 @@ function renderTeachingItems(courses, container) {
 }
 
 /**
- * 오늘 및 누적 방문자 수 카운터 초기화 및 애니메이션
+ * 전 세계 모든 방문자 실시간 통합 집계 카운터 (CounterAPI 연동)
  */
-function initVisitorCounter() {
+async function initVisitorCounter() {
     const todayElem = document.getElementById('today-count');
     if (!todayElem) return;
 
-    // 오늘 날짜 구하기 (YYYY-MM-DD)
+    // 오늘 날짜 고유 키 구하기 (YYYYMMDD)
     const now = new Date();
-    const todayKey = `wdsl_visit_date_${now.getFullYear()}-${now.getMonth() + 1}-${now.getDate()}`;
-    const lastVisitDate = localStorage.getItem('wdsl_last_date');
+    const todayStr = `${now.getFullYear()}${String(now.getMonth() + 1).padStart(2, '0')}${String(now.getDate()).padStart(2, '0')}`;
+    const namespace = 'sku_wdsl_lab_official';
+    const key = `today_visit_${todayStr}`;
 
-    let todayVisits = parseInt(localStorage.getItem(todayKey) || '14', 10);
+    // 세션당 1회만 카운트 증가 (중복 새로고침 무한 증가 방지)
+    const hasVisitedSession = sessionStorage.getItem('wdsl_global_visited_session');
+    const action = hasVisitedSession ? 'get' : 'up';
 
-    // 날짜가 변경되었으면 오늘 방문자 수 리셋
-    if (lastVisitDate !== todayKey) {
-        localStorage.setItem('wdsl_last_date', todayKey);
-        todayVisits = 1;
-        localStorage.setItem(todayKey, todayVisits);
-    } else {
-        // 세션에 방문 기록이 없으면 (새 방문 세션) 카운트 1 증가
-        if (!sessionStorage.getItem('wdsl_visited_session')) {
-            todayVisits += 1;
-            localStorage.setItem(todayKey, todayVisits);
-            sessionStorage.setItem('wdsl_visited_session', 'true');
+    try {
+        // 글로벌 실시간 통합 카운터 API 호출
+        const apiUrl = `https://api.counterapi.dev/v1/${namespace}/${key}/${action}`;
+        const response = await fetch(apiUrl);
+        const data = await response.json();
+
+        if (data && typeof data.count === 'number') {
+            if (!hasVisitedSession) {
+                sessionStorage.setItem('wdsl_global_visited_session', 'true');
+            }
+            animateCount(todayElem, data.count);
+            localStorage.setItem('wdsl_today_cached_count', data.count);
+            return;
         }
+    } catch (err) {
+        console.warn('통합 카운터 API 연동 대기/백업 모드 전환:', err);
     }
 
-    // 숫자 카운트업 애니메이션 적용
+    // 네트워크 예외 시 폴백(Fallback) 안전 카운터 작동
+    let todayVisits = parseInt(localStorage.getItem('wdsl_today_cached_count') || '1', 10);
+    if (!hasVisitedSession) {
+        todayVisits += 1;
+        localStorage.setItem('wdsl_today_cached_count', todayVisits);
+        sessionStorage.setItem('wdsl_global_visited_session', 'true');
+    }
     animateCount(todayElem, todayVisits);
 }
 
