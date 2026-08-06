@@ -24,7 +24,7 @@
         rel="stylesheet">
 
     <!-- CSS 스타일시트 -->
-    <link rel="stylesheet" href="style2.css?v=31">
+    <link rel="stylesheet" href="style2.css?v=35">
 
     <!-- Lucide Icons CDN -->
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -48,25 +48,25 @@
                 <div class="nav-item-dropdown">
                     <a href="#member" class="nav-item" id="nav-link-member">Member</a>
                     <div class="dropdown-menu">
-                        <a href="#professor-title" class="dropdown-subitem">Professor</a>
-                        <a href="#researchers-title" class="dropdown-subitem">Researcher</a>
+                        <a href="#professor-title" class="dropdown-subitem">지도교수</a>
+                        <a href="#researchers-title" class="dropdown-subitem">연구원</a>
                     </div>
                 </div>
                 <a href="#alumni" class="nav-item" id="nav-link-alumni">Alumni</a>
                 <div class="nav-item-dropdown">
                     <a href="#publication" class="nav-item" id="nav-link-publication">Publication</a>
                     <div class="dropdown-menu">
-                        <a href="#pub-books-title" class="dropdown-subitem">Books</a>
-                        <a href="#pub-int-title" class="dropdown-subitem">International Journals</a>
-                        <a href="#pub-dom-title" class="dropdown-subitem">Domestic Journals</a>
+                        <a href="#pub-books-title" class="dropdown-subitem">저역서</a>
+                        <a href="#pub-int-title" class="dropdown-subitem">국제학술지</a>
+                        <a href="#pub-dom-title" class="dropdown-subitem">국내학술지</a>
                     </div>
                 </div>
                 <a href="#project" class="nav-item" id="nav-link-project">Project</a>
                 <div class="nav-item-dropdown">
                     <a href="#teaching" class="nav-item" id="nav-link-teaching">Teaching</a>
                     <div class="dropdown-menu">
-                        <a href="#teaching-undergrad-title" class="dropdown-subitem">Undergraduate Course</a>
-                        <a href="#teaching-grad-title" class="dropdown-subitem">Graduate Course</a>
+                        <a href="#teaching-undergrad-title" class="dropdown-subitem">학부과정</a>
+                        <a href="#teaching-grad-title" class="dropdown-subitem">대학원과정</a>
                     </div>
                 </div>
             </nav>
@@ -89,25 +89,25 @@
             <div class="mobile-nav-item-dropdown">
                 <a href="#member" class="mobile-nav-item">Member</a>
                 <div class="mobile-dropdown-menu">
-                    <a href="#professor-title" class="mobile-dropdown-subitem">Professor</a>
-                    <a href="#researchers-title" class="mobile-dropdown-subitem">Researcher</a>
+                    <a href="#professor-title" class="mobile-dropdown-subitem">지도교수</a>
+                    <a href="#researchers-title" class="mobile-dropdown-subitem">연구원</a>
                 </div>
             </div>
             <a href="#alumni" class="mobile-nav-item">Alumni</a>
             <div class="mobile-nav-item-dropdown">
                 <a href="#publication" class="mobile-nav-item" id="mobile-nav-link-publication">Publication</a>
                 <div class="mobile-dropdown-menu">
-                    <a href="#pub-books-title" class="mobile-dropdown-subitem">Books</a>
-                    <a href="#pub-int-title" class="mobile-dropdown-subitem">International Journals</a>
-                    <a href="#pub-dom-title" class="mobile-dropdown-subitem">Domestic Journals</a>
+                    <a href="#pub-books-title" class="mobile-dropdown-subitem">저역서</a>
+                    <a href="#pub-int-title" class="mobile-dropdown-subitem">국제학술지</a>
+                    <a href="#pub-dom-title" class="mobile-dropdown-subitem">국내학술지</a>
                 </div>
             </div>
             <a href="#project" class="mobile-nav-item" id="mobile-nav-link-project">Project</a>
             <div class="mobile-nav-item-dropdown">
                 <a href="#teaching" class="mobile-nav-item" id="mobile-nav-link-teaching">Teaching</a>
                 <div class="mobile-dropdown-menu">
-                    <a href="#teaching-undergrad-title" class="mobile-dropdown-subitem">Undergraduate Course</a>
-                    <a href="#teaching-grad-title" class="mobile-dropdown-subitem">Graduate Course</a>
+                    <a href="#teaching-undergrad-title" class="mobile-dropdown-subitem">학부과정</a>
+                    <a href="#teaching-grad-title" class="mobile-dropdown-subitem">대학원과정</a>
                 </div>
             </div>
         </nav>
@@ -139,14 +139,14 @@
                 </div>
 
                 <!-- 교수 프로필 영역 (JS로 동적 렌더링 예정) -->
-                <h3 class="group-title" id="professor-title">Professor</h3>
+                <h3 class="group-title" id="professor-title">지도교수</h3>
                 <div id="professor-container" class="member-group">
                     <!-- JS 로드 전 대체 메시지 혹은 로딩 바 -->
                     <div class="loading-spinner"></div>
                 </div>
 
                 <!-- 연구원 프로필 영역 (JS로 동적 렌더링 예정) -->
-                <h3 class="group-title" id="researchers-title">Researcher</h3>
+                <h3 class="group-title" id="researchers-title">연구원</h3>
                 <div id="student-container" class="member-grid">
                     <div class="loading-spinner"></div>
                 </div>
@@ -175,19 +175,19 @@
                 </div>
 
                 <!-- 1) 저역서 영역 -->
-                <h3 class="group-title" id="pub-books-title">Books</h3>
+                <h3 class="group-title" id="pub-books-title">저역서</h3>
                 <div id="pub-books-container" class="pub-list">
                     <div class="loading-spinner"></div>
                 </div>
 
                 <!-- 2) 국제학술지 영역 -->
-                <h3 class="group-title" id="pub-int-title" style="margin-top: 48px;">International Journals</h3>
+                <h3 class="group-title" id="pub-int-title" style="margin-top: 48px;">국제학술지</h3>
                 <div id="pub-int-container" class="pub-list">
                     <div class="loading-spinner"></div>
                 </div>
 
                 <!-- 3) 국내학술지 영역 -->
-                <h3 class="group-title" id="pub-dom-title" style="margin-top: 48px;">Domestic Journals</h3>
+                <h3 class="group-title" id="pub-dom-title" style="margin-top: 48px;">국내학술지</h3>
                 <div id="pub-dom-container" class="pub-list">
                     <div class="loading-spinner"></div>
                 </div>
@@ -216,13 +216,13 @@
                 </div>
 
                 <!-- 1) 학부 과정 -->
-                <h3 class="group-title" id="teaching-undergrad-title">Undergraduate Course</h3>
+                <h3 class="group-title" id="teaching-undergrad-title">학부과정</h3>
                 <div id="teaching-undergrad-container" class="teaching-container" style="margin-top: 16px; margin-bottom: 48px;">
                     <div class="loading-spinner"></div>
                 </div>
 
                 <!-- 2) 대학원 과정 -->
-                <h3 class="group-title" id="teaching-grad-title">Graduate Course</h3>
+                <h3 class="group-title" id="teaching-grad-title">대학원과정</h3>
                 <div id="teaching-grad-container" class="teaching-container" style="margin-top: 16px;">
                     <div class="loading-spinner"></div>
                 </div>
@@ -237,16 +237,22 @@
                     <img src="images/logo2.png" alt="WDSL Logo" class="footer-logo-wdsl">
                     <div class="logo-text">
                         <span class="logo-title">SKU WDSL</span>
-                        <span class="logo-eng-title">Water &amp; Disaster System Laboratory</span>
+                        <span class="logo-eng-title">Water &amp; Disaster System Lab</span>
                         <span class="logo-subtitle">서경대학교 풍수해시스템연구실</span>
                     </div>
                 </div>
                 <img src="images/sku_logo.png" alt="Seokyeong University Logo" class="footer-logo-sku">
             </div>
             <div class="footer-info">
-                <p><i data-lucide="map-pin"></i> 주소: 서울특별시 성북구 서경로 124 서경대학교 대일관 B101호</p>
-                <p><i data-lucide="mail"></i> 문의 이메일: skuwdsl@gmail.com</p>
-                <p><i data-lucide="phone"></i> 전화번호: 02-940-7770</p>
+                <p><i data-lucide="map-pin"></i> 서울특별시 성북구 서경로 124 서경대학교 대일관 B101호</p>
+                <p><i data-lucide="mail"></i> skuwdsl@gmail.com</p>
+                <p><i data-lucide="phone"></i> 02-940-7770</p>
+            </div>
+            <div class="footer-visitor-counter">
+                <div class="visitor-stat">
+                    <span class="stat-label"><i data-lucide="user-check"></i> Today</span>
+                    <span class="stat-value" id="today-count">0</span>
+                </div>
             </div>
         </div>
         <div class="footer-bottom">
@@ -257,7 +263,7 @@
     </footer>
 
     <!-- 자바스크립트 파일 로드 -->
-    <script src="js/main.js?v=18"></script>
+    <script src="js/main.js?v=20"></script>
 </body>
 
 </html>
