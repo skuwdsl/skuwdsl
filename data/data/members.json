@@ -1,0 +1,398 @@
+[
+  {
+    "id": 1,
+    "role": "professor",
+    "nameKo": "안 재 현",
+    "nameEn": "Ahn Jaehyun ",
+    "positionEn": "Advisor / Ph.D.",
+    "email": "wrr21@naver.com",
+    "office": "대일관 102호",
+    "researchInterests": [
+      "풍수해 예측",
+      "기후변화 적응",
+      "수리수문 모델링"
+    ],
+    "educations": [
+      "고려대학교 토목환경공학과 공학박사(수공학)",
+      "고려대학교 토목환경공학과 공학석사(수공학)",
+      "고려대학교 토목공학과 공학사"
+    ],
+    "careers": [
+      "행정안전부 정책자문위원회 재난관리분과 위원",
+      "기후에너지환경부 국가수자원관리위원회 위원",
+      "한국수자원학회 부회장",
+      "한국방재협회 부회장",
+      "한국국민안전산업협회 부회장",
+      "한국물학술단체연합회 부회장"
+    ],
+    "awards": [
+      "2026 대통령 표창",
+      "2023 한국수자원학회 저술상",
+      "2020 한국수자원학회 학술상",
+      "2019 한국수자원학회 논문상",
+      "2017 대통령 표창",
+      "2011 행정안전부장관 표창",
+      "2006 소방방재청장 표창"
+    ],
+    "image": "images/ahn.png"
+  },
+  {
+    "id": 2,
+    "role": "phd",
+    "nameKo": "백유현",
+    "nameEn": "Beck Yoo Hyun",
+    "positionKo": "박사과정",
+    "positionEn": "Ph.D. Candidate",
+    "email": "beckyh@nate.com",
+    "researchInterests": [
+      "빅데이터 기반 홍수 예측",
+      "머신러닝 수문 모델링"
+    ],
+    "image": "images/person.png"
+  },
+  {
+    "id": 3,
+    "role": "phd",
+    "nameKo": "염웅선",
+    "nameEn": "Yeom Woong Sun",
+    "positionKo": "박사과정",
+    "positionEn": "Ph.D. Candidate",
+    "email": "duadndtjs@naver.com",
+    "researchInterests": [
+      "빅데이터 기반 홍수 예측",
+      "머신러닝 수문 모델링"
+    ],
+    "image": "images/yeom.jpg"
+  },
+  {
+    "id": 4,
+    "role": "master",
+    "nameKo": "박주용",
+    "nameEn": "Park Joo Yong",
+    "positionKo": "석사과정",
+    "positionEn": "M.S. Student",
+    "email": "pjynum@naver.com",
+    "researchInterests": [
+      "도시 배수 시스템 해석",
+      "기후 시나리오 분석"
+    ],
+    "image": "images/person.png"
+  },
+  {
+    "id": 5,
+    "role": "master",
+    "nameKo": "박유비",
+    "nameEn": "Park You Bi",
+    "positionKo": "석사과정",
+    "positionEn": "M.S. Student",
+    "email": "parkyoube@naver.com",
+    "researchInterests": [
+      "도시 배수 시스템 해석",
+      "기후 시나리오 분석"
+    ],
+    "image": "images/park.jpg"
+  },
+  {
+    "id": 6,
+    "role": "master",
+    "nameKo": "임수연",
+    "nameEn": "Lim Su Yeon",
+    "positionKo": "학부연구생",
+    "positionEn": "Undergraduate Student",
+    "researchInterests": [
+      "도시 배수 시스템 해석",
+      "기후 시나리오 분석"
+    ],
+    "image": "images/person.png"
+  },
+  {
+    "id": 7,
+    "role": "master",
+    "nameKo": "황승하",
+    "nameEn": "Hwang Seung Ha",
+    "positionKo": "학부연구생",
+    "positionEn": "Undergraduate Student",
+    "researchInterests": [
+      "도시 배수 시스템 해석",
+      "기후 시나리오 분석"
+    ],
+    "image": "images/person.png"
+  },
+  {
+    "id": 8,
+    "role": "master",
+    "nameKo": "유승민",
+    "nameEn": "Yoo Seung Min",
+    "positionKo": "학부연구생",
+    "positionEn": "Undergraduate Student",
+    "researchInterests": [
+      "도시 배수 시스템 해석",
+      "기후 시나리오 분석"
+    ],
+    "image": "images/person.png"
+  },
+  {
+    "id": 1,
+    "role": "alumni",
+    "nameKo": "유영무",
+    "company": "한국수자원조사기술원"
+  },
+  {
+    "id": 2,
+    "role": "alumni",
+    "nameKo": "백유현",
+    "company": "동명기술공단"
+  },
+  {
+    "id": 3,
+    "role": "alumni",
+    "nameKo": "김건순",
+    "company": "서울소셜벤처허브"
+  },
+  {
+    "id": 4,
+    "role": "alumni",
+    "nameKo": "이동규",
+    "company": "한국수자원조사기술원"
+  },
+  {
+    "id": 5,
+    "role": "alumni",
+    "nameKo": "진호수",
+    "company": "한국수자원조사기술원"
+  },
+  {
+    "id": 6,
+    "role": "alumni",
+    "nameKo": "유승혁",
+    "company": "동부엔지니어링㈜"
+  },
+  {
+    "id": 7,
+    "role": "alumni",
+    "nameKo": "홍정두",
+    "company": "한국수자원조사기술원"
+  },
+  {
+    "id": 8,
+    "role": "alumni",
+    "nameKo": "김건우",
+    "company": "한국수자원조사기술원"
+  },
+  {
+    "id": 9,
+    "role": "alumni",
+    "nameKo": "이듬",
+    "company": "㈜KG엔지니어링"
+  },
+  {
+    "id": 10,
+    "role": "alumni",
+    "nameKo": "신채호",
+    "company": "동명기술공단"
+  },
+  {
+    "id": 11,
+    "role": "alumni",
+    "nameKo": "석수원",
+    "company": "한국수자원조사기술원"
+  },
+  {
+    "id": 12,
+    "role": "alumni",
+    "nameKo": "이재근",
+    "company": "주은종합기술"
+  },
+  {
+    "id": 13,
+    "role": "alumni",
+    "nameKo": "정찬웅",
+    "company": "한국수자원조사기술원"
+  },
+  {
+    "id": 14,
+    "role": "alumni",
+    "nameKo": "손지훈",
+    "company": "큐브엔지니어링"
+  },
+  {
+    "id": 15,
+    "role": "alumni",
+    "nameKo": "여호준",
+    "company": "개인사업"
+  },
+  {
+    "id": 16,
+    "role": "alumni",
+    "nameKo": "박동혁",
+    "company": "㈜라온티앤씨"
+  },
+  {
+    "id": 17,
+    "role": "alumni",
+    "nameKo": "윤여훈",
+    "company": "주은종합기술"
+  },
+  {
+    "id": 18,
+    "role": "alumni",
+    "nameKo": "박준영",
+    "company": "㈜삼안"
+  },
+  {
+    "id": 19,
+    "role": "alumni",
+    "nameKo": "이상형",
+    "company": "가덕도신공항건설공단"
+  },
+  {
+    "id": 20,
+    "role": "alumni",
+    "nameKo": "정범",
+    "company": "㈜한국종합기술"
+  },
+  {
+    "id": 21,
+    "role": "alumni",
+    "nameKo": "김경노",
+    "company": "㈜강토엔지니어링"
+  },
+  {
+    "id": 22,
+    "role": "alumni",
+    "nameKo": "신찬섭",
+    "company": "㈜동서"
+  },
+  {
+    "id": 23,
+    "role": "alumni",
+    "nameKo": "권진주",
+    "company": "㈜삼안"
+  },
+  {
+    "id": 24,
+    "role": "alumni",
+    "nameKo": "정호영",
+    "company": "㈜KG엔지니어링"
+  },
+  {
+    "id": 25,
+    "role": "alumni",
+    "nameKo": "김훈범",
+    "company": "㈜KG엔지니어링"
+  },
+  {
+    "id": 26,
+    "role": "alumni",
+    "nameKo": "이용환",
+    "company": "㈜한국종합기술"
+  },
+  {
+    "id": 27,
+    "role": "alumni",
+    "nameKo": "정해민",
+    "company": "㈜제일엔지니어링"
+  },
+  {
+    "id": 28,
+    "role": "alumni",
+    "nameKo": "박미리",
+    "company": "고양시청"
+  },
+  {
+    "id": 29,
+    "role": "alumni",
+    "nameKo": "조진희",
+    "company": "공무원"
+  },
+  {
+    "id": 30,
+    "role": "alumni",
+    "nameKo": "안주현",
+    "company": "㈜한국종합기술"
+  },
+  {
+    "id": 31,
+    "role": "alumni",
+    "nameKo": "박주용",
+    "company": "㈜유신"
+  },
+  {
+    "id": 32,
+    "role": "alumni",
+    "nameKo": "정진홍",
+    "company": "㈜도화엔지니어링"
+  },
+  {
+    "id": 33,
+    "role": "alumni",
+    "nameKo": "염웅선",
+    "company": "서경대학교"
+  },
+  {
+    "id": 34,
+    "role": "alumni",
+    "nameKo": "임상우",
+    "company": "동일기술공사"
+  },
+  {
+    "id": 35,
+    "role": "alumni",
+    "nameKo": "김형규",
+    "company": "㈜삼안"
+  },
+  {
+    "id": 36,
+    "role": "alumni",
+    "nameKo": "정승훈",
+    "company": "㈜한맥기술"
+  },
+  {
+    "id": 37,
+    "role": "alumni",
+    "nameKo": "김지환",
+    "company": "동명기술공단"
+  },
+  {
+    "id": 38,
+    "role": "alumni",
+    "nameKo": "조성민",
+    "company": "한국공항공사"
+  },
+  {
+    "id": 39,
+    "role": "alumni",
+    "nameKo": "문남기",
+    "company": "㈜이산"
+  },
+  {
+    "id": 40,
+    "role": "alumni",
+    "nameKo": "김규탁",
+    "company": "㈜KG엔지니어링"
+  },
+  {
+    "id": 41,
+    "role": "alumni",
+    "nameKo": "박승하",
+    "company": "㈜건화"
+  },
+  {
+    "id": 42,
+    "role": "alumni",
+    "nameKo": "서강현",
+    "company": "㈜유신"
+  },
+  {
+    "id": 43,
+    "role": "alumni",
+    "nameKo": "심세연",
+    "company": "하존이앤씨"
+  },
+  {
+    "id": 44,
+    "role": "alumni",
+    "nameKo": "정서연",
+    "company": "㈜삼안"
+  }
+]
