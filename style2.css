@@ -1185,9 +1185,10 @@ ul {
 }
 
 .stat-divider {
-    width: 1px;
-    height: 28px;
-    background: rgba(0, 0, 0, 0.1);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: rgba(var(--primary-rgb), 0.35);
+    margin: 0 4px;
 }
 
 .footer-bottom {
