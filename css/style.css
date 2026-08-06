@@ -528,17 +528,25 @@ ul {
     border: 1px solid var(--border-glass);
 }
 
+.professor-name-group {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+}
+
 .professor-info h3 {
     font-family: var(--font-heading);
     font-size: 2rem;
     font-weight: 700;
-    margin-bottom: 4px;
+    margin-bottom: 0;
 }
 
 .professor-info .eng-name {
     font-size: 1.1rem;
     color: var(--text-secondary);
-    margin-bottom: 8px;
+    margin-bottom: 0;
 }
 
 .professor-info .position {
@@ -929,8 +937,8 @@ ul {
 /* 11-2. 졸업생 스타일 (Alumni Section) */
 .alumni-list-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
     margin-top: 20px;
 }
 
