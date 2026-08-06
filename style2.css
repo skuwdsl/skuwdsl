@@ -1713,17 +1713,25 @@ ul {
     }
 
     .alumni-card {
-        padding: 8px 10px;
-        gap: 6px;
+        padding: 8px 8px;
+        gap: 5px;
         grid-template-columns: auto 1fr;
     }
 
     .alumni-card h4 {
-        font-size: 0.88rem;
+        font-size: 0.85rem;
+        white-space: nowrap;
     }
 
     .alumni-card .company {
-        font-size: 0.78rem;
+        font-size: 0.75rem;
+        word-break: keep-all;
+        line-height: 1.2;
+    }
+
+    .alumni-card .company svg,
+    .alumni-card .company i {
+        display: none !important;
     }
 
     /* 모바일 화면에서 강의 카드 레이아웃: 영문 과목명 아래 한글 과목명이 2줄로 깔끔하게 좌측 정렬되어 배치되도록 처리 */
