@@ -11,7 +11,7 @@
   {
     "id": 2,
     "type": "book",
-    "title": "비욘드워터",
+    "title": "비욘드워터 (공저)",
     "authors": "안재현",
     "publisher": "교문사",
     "year": 2021,
@@ -20,7 +20,7 @@
   {
     "id": 3,
     "type": "book",
-    "title": "방재안전학1",
+    "title": "방재안전학1 (공저)",
     "authors": "안재현",
     "publisher": "비앤엠북스",
     "year": 2021,
@@ -29,7 +29,7 @@
   {
     "id": 4,
     "type": "book",
-    "title": "수문학·수리학 - 수공구조물 공학설계를 위한",
+    "title": "수문학·수리학 - 수공구조물 공학설계를 위한 (공저)",
     "authors": "윤용남, 안재현, 김태웅",
     "publisher": "교문사",
     "year": 2021,
@@ -38,7 +38,7 @@
   {
     "id": 5,
     "type": "book",
-    "title": "재난복구론",
+    "title": "재난복구론 (공역)",
     "authors": "안재현",
     "publisher": "북코리아",
     "year": 2018,
@@ -47,7 +47,7 @@
   {
     "id": 6,
     "type": "book",
-    "title": "재해분석론",
+    "title": "재해분석론 (공역)",
     "authors": "안재현",
     "publisher": "북코리아",
     "year": 2016,
@@ -56,7 +56,7 @@
   {
     "id": 7,
     "type": "book",
-    "title": "재난관리론",
+    "title": "재난관리론 (공역)",
     "authors": "안재현",
     "publisher": "북코리아",
     "year": 2016,
@@ -65,7 +65,7 @@
   {
     "id": 8,
     "type": "book",
-    "title": "물위를 걸어온 과학자들",
+    "title": "물위를 걸어온 과학자들 (공저)",
     "authors": "안재현",
     "publisher": "한티미디어",
     "year": 2012,
@@ -74,7 +74,7 @@
   {
     "id": 9,
     "type": "book",
-    "title": "방재사전",
+    "title": "방재사전 (공저)",
     "authors": "안재현",
     "publisher": "알앤디프레스",
     "year": 2011,
