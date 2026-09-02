@@ -7,17 +7,13 @@
     "positionEn": "Advisor / Ph.D.",
     "email": "wrr21@naver.com",
     "office": "대일관 102호",
-    "researchInterests": [
-      "풍수해 예측",
-      "기후변화 적응",
-      "수리수문 모델링"
-    ],
     "educations": [
       "고려대학교 토목환경공학과 공학박사(수공학)",
       "고려대학교 토목환경공학과 공학석사(수공학)",
       "고려대학교 토목공학과 공학사"
     ],
     "careers": [
+      "서경대학교 토목건축공학과 교수",
       "행정안전부 정책자문위원회 재난관리분과 위원",
       "기후에너지환경부 국가수자원관리위원회 위원",
       "한국수자원학회 부회장",
@@ -27,11 +23,12 @@
     ],
     "awards": [
       "2026 대통령 표창",
+      "2024/2025 연세대학교 공학대학원 우수강의 교수",
       "2023 한국수자원학회 저술상",
       "2020 한국수자원학회 학술상",
       "2019 한국수자원학회 논문상",
       "2017 대통령 표창",
-      "2011 행정안전부장관 표창",
+      "2010/2017/2018/2023/2025 서경대학교 우수강의 교원",
       "2006 소방방재청장 표창"
     ],
     "image": "images/ahn.png"
@@ -44,10 +41,6 @@
     "positionKo": "박사과정",
     "positionEn": "Ph.D. Candidate",
     "email": "beckyh@nate.com",
-    "researchInterests": [
-      "빅데이터 기반 홍수 예측",
-      "머신러닝 수문 모델링"
-    ],
     "image": "images/person.png"
   },
   {
@@ -57,11 +50,7 @@
     "nameEn": "Yeom Woong Sun",
     "positionKo": "박사과정",
     "positionEn": "Ph.D. Candidate",
-    "email": "duadndtjs@naver.com",
-    "researchInterests": [
-      "빅데이터 기반 홍수 예측",
-      "머신러닝 수문 모델링"
-    ],
+    "email": "ws_yeom@naver.com",
     "image": "images/yeom.jpg"
   },
   {
@@ -72,10 +61,6 @@
     "positionKo": "석사과정",
     "positionEn": "M.S. Student",
     "email": "pjynum@naver.com",
-    "researchInterests": [
-      "도시 배수 시스템 해석",
-      "기후 시나리오 분석"
-    ],
     "image": "images/person.png"
   },
   {
@@ -86,10 +71,6 @@
     "positionKo": "석사과정",
     "positionEn": "M.S. Student",
     "email": "parkyoube@naver.com",
-    "researchInterests": [
-      "도시 배수 시스템 해석",
-      "기후 시나리오 분석"
-    ],
     "image": "images/park.jpg"
   },
   {
@@ -99,10 +80,6 @@
     "nameEn": "Lim Su Yeon",
     "positionKo": "학부연구생",
     "positionEn": "Undergraduate Student",
-    "researchInterests": [
-      "도시 배수 시스템 해석",
-      "기후 시나리오 분석"
-    ],
     "image": "images/person.png"
   },
   {
@@ -112,10 +89,6 @@
     "nameEn": "Hwang Seung Ha",
     "positionKo": "학부연구생",
     "positionEn": "Undergraduate Student",
-    "researchInterests": [
-      "도시 배수 시스템 해석",
-      "기후 시나리오 분석"
-    ],
     "image": "images/person.png"
   },
   {
@@ -125,10 +98,6 @@
     "nameEn": "Yoo Seung Min",
     "positionKo": "학부연구생",
     "positionEn": "Undergraduate Student",
-    "researchInterests": [
-      "도시 배수 시스템 해석",
-      "기후 시나리오 분석"
-    ],
     "image": "images/person.png"
   },
   {
