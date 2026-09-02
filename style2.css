@@ -1141,55 +1141,7 @@ ul {
     flex-shrink: 0;
 }
 
-/* 방문자 카운터 위젯 스타일 */
-.footer-visitor-counter {
-    display: inline-flex;
-    align-items: center;
-    background: rgba(var(--primary-rgb), 0.05);
-    border: 1px solid rgba(var(--primary-rgb), 0.15);
-    border-radius: 12px;
-    padding: 10px 20px;
-    gap: 20px;
-    margin-left: auto;
-    backdrop-filter: blur(8px);
-}
 
-.visitor-stat {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 4px;
-}
-
-.stat-label {
-    font-size: 0.78rem;
-    color: var(--text-secondary);
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    font-weight: 600;
-}
-
-.stat-label svg {
-    width: 14px;
-    height: 14px;
-    color: var(--primary);
-}
-
-.stat-value {
-    font-size: 1.2rem;
-    font-weight: 800;
-    color: var(--primary);
-    font-family: var(--font-heading);
-    line-height: 1.1;
-}
-
-.stat-divider {
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: rgba(var(--primary-rgb), 0.35);
-    margin: 0 4px;
-}
 
 .footer-bottom {
     border-top: 1px solid rgba(0, 0, 0, 0.06);
@@ -1759,10 +1711,4 @@ ul {
         text-align: left;
     }
 
-    .footer-visitor-counter {
-        margin-left: 0;
-        margin-top: 12px;
-        width: 100%;
-        justify-content: center;
-    }
 }
